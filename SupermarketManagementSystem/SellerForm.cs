@@ -47,7 +47,7 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Seller VALUES (" + TextBox_id.Text + ",'" + TextBox_name.Text + "','" + TextBox_age.Text + "','" + TextBox_phone.Text + "'," + TextBox_pass.Text + "')";
+                string insertQuery = "INSERT INTO Seller VALUES(" + TextBox_id.Text + ",'" + TextBox_name.Text + "','" + TextBox_age.Text + "','" + TextBox_phone.Text + "','" + TextBox_pass.Text + "')";
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
