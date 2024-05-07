@@ -72,6 +72,7 @@ namespace SupermarketManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(929, 611);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox1_id
             // 
@@ -100,7 +101,7 @@ namespace SupermarketManagementSystem
             this.label7_manageCat.ForeColor = System.Drawing.Color.White;
             this.label7_manageCat.Location = new System.Drawing.Point(338, 4);
             this.label7_manageCat.Name = "label7_manageCat";
-            this.label7_manageCat.Size = new System.Drawing.Size(354, 49);
+            this.label7_manageCat.Size = new System.Drawing.Size(340, 48);
             this.label7_manageCat.TabIndex = 15;
             this.label7_manageCat.Text = "MANAGE CATEGORIES";
             // 
@@ -206,7 +207,7 @@ namespace SupermarketManagementSystem
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label1.Location = new System.Drawing.Point(1071, -12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 39);
+            this.label1.Size = new System.Drawing.Size(34, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "X";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
@@ -226,6 +227,7 @@ namespace SupermarketManagementSystem
             this.button5_seller.TabIndex = 16;
             this.button5_seller.Text = "Seller";
             this.button5_seller.UseVisualStyleBackColor = false;
+            this.button5_seller.Click += new System.EventHandler(this.button5_seller_Click);
             // 
             // button6_product
             // 
@@ -240,6 +242,7 @@ namespace SupermarketManagementSystem
             this.button6_product.TabIndex = 17;
             this.button6_product.Text = "Product";
             this.button6_product.UseVisualStyleBackColor = false;
+            this.button6_product.Click += new System.EventHandler(this.button6_product_Click_1);
             // 
             // button7_selling
             // 
@@ -254,6 +257,7 @@ namespace SupermarketManagementSystem
             this.button7_selling.TabIndex = 18;
             this.button7_selling.Text = "Selling";
             this.button7_selling.UseVisualStyleBackColor = false;
+            this.button7_selling.Click += new System.EventHandler(this.button7_selling_Click);
             // 
             // button8_logout
             // 

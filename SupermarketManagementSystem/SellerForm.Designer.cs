@@ -34,6 +34,10 @@
             this.button5_seller = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.TextBox_phone = new System.Windows.Forms.TextBox();
+            this.TextBox_pass = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.TextBox_id = new System.Windows.Forms.TextBox();
             this.dataGridView_seller = new System.Windows.Forms.DataGridView();
             this.label7_manageCat = new System.Windows.Forms.Label();
@@ -45,10 +49,6 @@
             this.TextBox_name = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TextBox_pass = new System.Windows.Forms.TextBox();
-            this.TextBox_phone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seller)).BeginInit();
             this.SuspendLayout();
@@ -120,6 +120,9 @@
             this.label1.Size = new System.Drawing.Size(34, 40);
             this.label1.TabIndex = 21;
             this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // panel1
             // 
@@ -144,6 +147,44 @@
             this.panel1.Size = new System.Drawing.Size(929, 611);
             this.panel1.TabIndex = 20;
             // 
+            // TextBox_phone
+            // 
+            this.TextBox_phone.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_phone.Location = new System.Drawing.Point(142, 248);
+            this.TextBox_phone.Name = "TextBox_phone";
+            this.TextBox_phone.Size = new System.Drawing.Size(200, 22);
+            this.TextBox_phone.TabIndex = 21;
+            // 
+            // TextBox_pass
+            // 
+            this.TextBox_pass.ForeColor = System.Drawing.Color.Black;
+            this.TextBox_pass.Location = new System.Drawing.Point(142, 296);
+            this.TextBox_pass.Name = "TextBox_pass";
+            this.TextBox_pass.Size = new System.Drawing.Size(200, 22);
+            this.TextBox_pass.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(13, 285);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 33);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Password";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(13, 243);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 33);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "Phone No.";
+            // 
             // TextBox_id
             // 
             this.TextBox_id.ForeColor = System.Drawing.Color.Black;
@@ -162,6 +203,7 @@
             this.dataGridView_seller.Size = new System.Drawing.Size(550, 490);
             this.dataGridView_seller.StandardTab = true;
             this.dataGridView_seller.TabIndex = 16;
+            this.dataGridView_seller.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_seller_CellContentClick);
             // 
             // label7_manageCat
             // 
@@ -202,6 +244,7 @@
             this.Update.TabIndex = 11;
             this.Update.Text = "Update";
             this.Update.UseVisualStyleBackColor = false;
+            this.Update.Click += new System.EventHandler(this.Update_Click);
             // 
             // Add
             // 
@@ -268,44 +311,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ID";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(13, 243);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 33);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "Phone No.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(13, 285);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(109, 33);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Password";
-            // 
-            // TextBox_pass
-            // 
-            this.TextBox_pass.ForeColor = System.Drawing.Color.Black;
-            this.TextBox_pass.Location = new System.Drawing.Point(142, 296);
-            this.TextBox_pass.Name = "TextBox_pass";
-            this.TextBox_pass.Size = new System.Drawing.Size(200, 22);
-            this.TextBox_pass.TabIndex = 20;
-            // 
-            // TextBox_phone
-            // 
-            this.TextBox_phone.ForeColor = System.Drawing.Color.Black;
-            this.TextBox_phone.Location = new System.Drawing.Point(142, 248);
-            this.TextBox_phone.Name = "TextBox_phone";
-            this.TextBox_phone.Size = new System.Drawing.Size(200, 22);
-            this.TextBox_phone.TabIndex = 21;
-            // 
             // SellerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -320,6 +325,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SellerForm";
             this.Text = "SellerForm";
+            this.Load += new System.EventHandler(this.SellerForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seller)).EndInit();

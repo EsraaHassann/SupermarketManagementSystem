@@ -162,5 +162,25 @@ namespace SupermarketManagementSystem
                 }
             }
         }
+
+        private void button7_selling_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_product_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_seller_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
