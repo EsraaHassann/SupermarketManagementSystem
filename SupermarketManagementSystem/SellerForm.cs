@@ -51,7 +51,7 @@ namespace SupermarketManagementSystem
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
-                MessageBox.Show("Seller added succesfully", "Add information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Seller added succesfullyy", "Add information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dBCon.CloseCon();
                 getTable();
                 clear();
@@ -87,7 +87,7 @@ namespace SupermarketManagementSystem
         }
 
         private void Update_Click(object sender, EventArgs e)
-            
+
         {/*
             try
             {
@@ -131,6 +131,7 @@ namespace SupermarketManagementSystem
         }
 
         private void Delete_Click(object sender, EventArgs e)
+
         { /*
             try
             {
@@ -154,11 +155,8 @@ namespace SupermarketManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }*/
-        }
 
-        private void Delete_Click(object sender, EventArgs e)
-        {
-
+            
         }
     }
 }
