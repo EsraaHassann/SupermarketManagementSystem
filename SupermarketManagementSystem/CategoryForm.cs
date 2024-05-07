@@ -7,19 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SupermarketManagementSystem
 {
     public partial class CategoryForm : Form
     {
+        private readonly DBConnect dBCon = new DBConnect();
+
         public CategoryForm()
         {
             InitializeComponent();
         }
-
-        private void CategoryForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
-}
+ }
