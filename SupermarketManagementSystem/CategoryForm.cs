@@ -164,7 +164,9 @@ namespace SupermarketManagementSystem
 
         private void button5_seller_Click(object sender, EventArgs e)
         {
-
+            SellerForm seller = new SellerForm();
+            seller.Show();
+            this.Hide();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

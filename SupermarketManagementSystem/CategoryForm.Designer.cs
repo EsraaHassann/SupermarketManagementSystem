@@ -68,7 +68,7 @@ namespace SupermarketManagementSystem
             this.panel1.Controls.Add(this.textBox_Name);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(159, 27);
+            this.panel1.Location = new System.Drawing.Point(159, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(929, 611);
             this.panel1.TabIndex = 0;
@@ -221,9 +221,9 @@ namespace SupermarketManagementSystem
             this.button5_seller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5_seller.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5_seller.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button5_seller.Location = new System.Drawing.Point(8, 83);
+            this.button5_seller.Location = new System.Drawing.Point(8, 34);
             this.button5_seller.Name = "button5_seller";
-            this.button5_seller.Size = new System.Drawing.Size(135, 52);
+            this.button5_seller.Size = new System.Drawing.Size(140, 52);
             this.button5_seller.TabIndex = 16;
             this.button5_seller.Text = "Seller";
             this.button5_seller.UseVisualStyleBackColor = false;
@@ -236,7 +236,7 @@ namespace SupermarketManagementSystem
             this.button6_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6_product.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6_product.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button6_product.Location = new System.Drawing.Point(8, 173);
+            this.button6_product.Location = new System.Drawing.Point(8, 115);
             this.button6_product.Name = "button6_product";
             this.button6_product.Size = new System.Drawing.Size(140, 52);
             this.button6_product.TabIndex = 17;
@@ -251,7 +251,7 @@ namespace SupermarketManagementSystem
             this.button7_selling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7_selling.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7_selling.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button7_selling.Location = new System.Drawing.Point(8, 268);
+            this.button7_selling.Location = new System.Drawing.Point(8, 191);
             this.button7_selling.Name = "button7_selling";
             this.button7_selling.Size = new System.Drawing.Size(140, 52);
             this.button7_selling.TabIndex = 18;
