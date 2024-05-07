@@ -155,5 +155,10 @@ namespace SupermarketManagementSystem
                 MessageBox.Show(ex.Message);
             }*/
         }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

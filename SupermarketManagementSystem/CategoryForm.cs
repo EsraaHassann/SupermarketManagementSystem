@@ -26,24 +26,11 @@ namespace SupermarketManagementSystem
             getTable();
         }
 
-        private void button8_logout_Click(object sender, EventArgs e)
+        private void button8_logout_Click_1(object sender, EventArgs e)
         {
             //LoginForm login = new LoginForm();
             //login.Show();
             //this.Hide();
-
-        }
-
-        private void button6_product_Click(object sender, EventArgs e)
-        {
-            //ProductForm product = new ProductForm();
-            //product.Show (); 
-            //this.Hide();    
-        }
-
-        private void button8_logout_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Add_Click_1(object sender, EventArgs e)
@@ -170,7 +157,9 @@ namespace SupermarketManagementSystem
 
         private void button6_product_Click_1(object sender, EventArgs e)
         {
-
+            //ProductForm product = new ProductForm();
+            //product.Show (); 
+            //this.Hide();   
         }
 
         private void button5_seller_Click(object sender, EventArgs e)
