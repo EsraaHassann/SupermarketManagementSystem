@@ -101,7 +101,7 @@ namespace SupermarketManagementSystem
             this.label7_manageCat.ForeColor = System.Drawing.Color.White;
             this.label7_manageCat.Location = new System.Drawing.Point(338, 4);
             this.label7_manageCat.Name = "label7_manageCat";
-            this.label7_manageCat.Size = new System.Drawing.Size(340, 48);
+            this.label7_manageCat.Size = new System.Drawing.Size(342, 48);
             this.label7_manageCat.TabIndex = 15;
             this.label7_manageCat.Text = "MANAGE CATEGORIES";
             // 
@@ -205,7 +205,7 @@ namespace SupermarketManagementSystem
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Sitka Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(1071, -12);
+            this.label1.Location = new System.Drawing.Point(1071, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 40);
             this.label1.TabIndex = 1;
@@ -221,7 +221,7 @@ namespace SupermarketManagementSystem
             this.button5_seller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5_seller.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5_seller.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button5_seller.Location = new System.Drawing.Point(18, 82);
+            this.button5_seller.Location = new System.Drawing.Point(8, 83);
             this.button5_seller.Name = "button5_seller";
             this.button5_seller.Size = new System.Drawing.Size(135, 52);
             this.button5_seller.TabIndex = 16;
@@ -236,7 +236,7 @@ namespace SupermarketManagementSystem
             this.button6_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6_product.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6_product.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button6_product.Location = new System.Drawing.Point(18, 173);
+            this.button6_product.Location = new System.Drawing.Point(8, 173);
             this.button6_product.Name = "button6_product";
             this.button6_product.Size = new System.Drawing.Size(140, 52);
             this.button6_product.TabIndex = 17;
@@ -251,7 +251,7 @@ namespace SupermarketManagementSystem
             this.button7_selling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7_selling.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7_selling.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button7_selling.Location = new System.Drawing.Point(18, 267);
+            this.button7_selling.Location = new System.Drawing.Point(8, 268);
             this.button7_selling.Name = "button7_selling";
             this.button7_selling.Size = new System.Drawing.Size(140, 52);
             this.button7_selling.TabIndex = 18;
@@ -266,7 +266,7 @@ namespace SupermarketManagementSystem
             this.button8_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8_logout.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8_logout.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.button8_logout.Location = new System.Drawing.Point(18, 585);
+            this.button8_logout.Location = new System.Drawing.Point(8, 586);
             this.button8_logout.Name = "button8_logout";
             this.button8_logout.Size = new System.Drawing.Size(140, 52);
             this.button8_logout.TabIndex = 19;

@@ -100,5 +100,10 @@ namespace SupermarketManagementSystem
         {
             getTable();
         }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
