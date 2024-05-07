@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TextBox_id = new System.Windows.Forms.TextBox();
-            this.dataGridView1_category = new System.Windows.Forms.DataGridView();
+            this.dataGridView_seller = new System.Windows.Forms.DataGridView();
             this.label7_manageCat = new System.Windows.Forms.Label();
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.TextBox_pass = new System.Windows.Forms.TextBox();
             this.TextBox_phone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_category)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seller)).BeginInit();
             this.SuspendLayout();
             // 
             // button8_logout
@@ -129,7 +129,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.TextBox_id);
-            this.panel1.Controls.Add(this.dataGridView1_category);
+            this.panel1.Controls.Add(this.dataGridView_seller);
             this.panel1.Controls.Add(this.label7_manageCat);
             this.panel1.Controls.Add(this.Delete);
             this.panel1.Controls.Add(this.Update);
@@ -152,16 +152,16 @@
             this.TextBox_id.Size = new System.Drawing.Size(200, 22);
             this.TextBox_id.TabIndex = 17;
             // 
-            // dataGridView1_category
+            // dataGridView_seller
             // 
-            this.dataGridView1_category.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1_category.ColumnHeadersHeight = 24;
-            this.dataGridView1_category.Location = new System.Drawing.Point(366, 108);
-            this.dataGridView1_category.Name = "dataGridView1_category";
-            this.dataGridView1_category.RowHeadersWidth = 51;
-            this.dataGridView1_category.Size = new System.Drawing.Size(550, 490);
-            this.dataGridView1_category.StandardTab = true;
-            this.dataGridView1_category.TabIndex = 16;
+            this.dataGridView_seller.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_seller.ColumnHeadersHeight = 24;
+            this.dataGridView_seller.Location = new System.Drawing.Point(366, 108);
+            this.dataGridView_seller.Name = "dataGridView_seller";
+            this.dataGridView_seller.RowHeadersWidth = 51;
+            this.dataGridView_seller.Size = new System.Drawing.Size(550, 490);
+            this.dataGridView_seller.StandardTab = true;
+            this.dataGridView_seller.TabIndex = 16;
             // 
             // label7_manageCat
             // 
@@ -196,7 +196,7 @@
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Update.ForeColor = System.Drawing.Color.White;
-            this.Update.Location = new System.Drawing.Point(146, 356);
+            this.Update.Location = new System.Drawing.Point(139, 356);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(94, 43);
             this.Update.TabIndex = 11;
@@ -210,12 +210,13 @@
             this.Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Add.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Add.ForeColor = System.Drawing.Color.White;
-            this.Add.Location = new System.Drawing.Point(46, 356);
+            this.Add.Location = new System.Drawing.Point(37, 356);
             this.Add.Name = "Add";
             this.Add.Size = new System.Drawing.Size(94, 43);
             this.Add.TabIndex = 10;
             this.Add.Text = "Add";
             this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // TextBox_age
             // 
@@ -321,7 +322,7 @@
             this.Text = "SellerForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_category)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_seller)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,7 +337,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox TextBox_id;
-        private System.Windows.Forms.DataGridView dataGridView1_category;
+        private System.Windows.Forms.DataGridView dataGridView_seller;
         private System.Windows.Forms.Label label7_manageCat;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;
