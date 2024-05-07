@@ -26,21 +26,27 @@ namespace SupermarketManagementSystem
             getTable();
         }
 
-        private void getTable()
+        private void button8_logout_Click(object sender, EventArgs e)
         {
-            string selectQuery = "SELECT * FROM Category";
-            using (SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon()))
-            {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView1_category.DataSource = table;
-                }
-            }
+            //LoginForm login = new LoginForm();
+            //login.Show();
+            //this.Hide();
+
         }
 
-        private void button1_Add_Click(object sender, EventArgs e)
+        private void button6_product_Click(object sender, EventArgs e)
+        {
+            //ProductForm product = new ProductForm();
+            //product.Show (); 
+            //this.Hide();    
+        }
+
+        private void button8_logout_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Add_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -59,7 +65,7 @@ namespace SupermarketManagementSystem
             }
         }
 
-        private void button2_Update_Click(object sender, EventArgs e)
+        private void button2_Update_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -85,21 +91,7 @@ namespace SupermarketManagementSystem
             }
         }
 
-        private void dataGridView1_category_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBox1_id.Text = dataGridView1_category.SelectedRows[0].Cells[0].Value.ToString();
-            textBox_Name.Text = dataGridView1_category.SelectedRows[0].Cells[1].Value.ToString();
-            textBox_des.Text = dataGridView1_category.SelectedRows[0].Cells[2].Value.ToString();
-        }
-
-        private void clear()
-        {
-            textBox1_id.Clear();
-            textBox_Name.Clear();
-            textBox_des.Clear();
-        }
-
-        private void button3_Delete_Click(object sender, EventArgs e)
+        private void button3_Delete_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -118,12 +110,24 @@ namespace SupermarketManagementSystem
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void dataGridView1_category_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Application.Exit();
+            textBox1_id.Text = dataGridView1_category.SelectedRows[0].Cells[0].Value.ToString();
+            textBox_Name.Text = dataGridView1_category.SelectedRows[0].Cells[1].Value.ToString();
+            textBox_des.Text = dataGridView1_category.SelectedRows[0].Cells[2].Value.ToString();
         }
 
-        private void label1_MouseEnter(object sender, EventArgs e)
+        private void button8_logout_MouseEnter_1(object sender, EventArgs e)
+        {
+            button8_logout.ForeColor = Color.Red;
+        }
+
+        private void button8_logout_MouseLeave_1(object sender, EventArgs e)
+        {
+            button8_logout.ForeColor = Color.CornflowerBlue;
+        }
+
+        private void label1_MouseEnter_1(object sender, EventArgs e)
         {
             label1.ForeColor = Color.Red;
         }
@@ -133,39 +137,30 @@ namespace SupermarketManagementSystem
             label1.ForeColor = Color.CornflowerBlue;
         }
 
-        private void button8_logout_Click(object sender, EventArgs e)
+        private void label1_Click_1(object sender, EventArgs e)
         {
-            //LoginForm login = new LoginForm();
-            //login.Show();
-            //this.Hide();
-
+            Application.Exit();
         }
 
-        private void button8_logout_MouseEnter(object sender, EventArgs e)
+        private void clear()
         {
-            button8_logout.ForeColor = Color.Red;
+            textBox1_id.Clear();
+            textBox_Name.Clear();
+            textBox_des.Clear();
         }
 
-        private void button8_logout_MouseLeave(object sender, EventArgs e)
+        private void getTable()
         {
-            button8_logout.ForeColor = Color.CornflowerBlue;
-        }
-
-        private void button6_product_Click(object sender, EventArgs e)
-        {
-            //ProductForm product = new ProductForm();
-            //product.Show (); 
-            //this.Hide();    
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_id_TextChanged(object sender, EventArgs e)
-        {
-
+            string selectQuery = "SELECT * FROM Category";
+            using (SqlCommand command = new SqlCommand (selectQuery, dBCon.GetCon()))
+            {
+                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                {
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    dataGridView1_category.DataSource = table;
+                }
+            }
         }
     }
 }

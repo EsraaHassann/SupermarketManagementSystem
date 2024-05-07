@@ -33,270 +33,267 @@ namespace SupermarketManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            textBox1_id = new TextBox();
-            dataGridView1_category = new DataGridView();
-            label7_manageCat = new Label();
-            button3_Delete = new Button();
-            button2_Update = new Button();
-            button1_Add = new Button();
-            textBox_des = new TextBox();
-            label4 = new Label();
-            textBox_Name = new TextBox();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
-            button5_seller = new Button();
-            button6_product = new Button();
-            button7_selling = new Button();
-            button8_logout = new Button();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1_category).BeginInit();
-            SuspendLayout();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1_id = new System.Windows.Forms.TextBox();
+            this.dataGridView1_category = new System.Windows.Forms.DataGridView();
+            this.label7_manageCat = new System.Windows.Forms.Label();
+            this.button3_Delete = new System.Windows.Forms.Button();
+            this.button2_Update = new System.Windows.Forms.Button();
+            this.button1_Add = new System.Windows.Forms.Button();
+            this.textBox_des = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button5_seller = new System.Windows.Forms.Button();
+            this.button6_product = new System.Windows.Forms.Button();
+            this.button7_selling = new System.Windows.Forms.Button();
+            this.button8_logout = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_category)).BeginInit();
+            this.SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.CornflowerBlue;
-            panel1.Controls.Add(textBox1_id);
-            panel1.Controls.Add(dataGridView1_category);
-            panel1.Controls.Add(label7_manageCat);
-            panel1.Controls.Add(button3_Delete);
-            panel1.Controls.Add(button2_Update);
-            panel1.Controls.Add(button1_Add);
-            panel1.Controls.Add(textBox_des);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox_Name);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(159, 27);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(929, 611);
-            panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
+            this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.textBox1_id);
+            this.panel1.Controls.Add(this.dataGridView1_category);
+            this.panel1.Controls.Add(this.label7_manageCat);
+            this.panel1.Controls.Add(this.button3_Delete);
+            this.panel1.Controls.Add(this.button2_Update);
+            this.panel1.Controls.Add(this.button1_Add);
+            this.panel1.Controls.Add(this.textBox_des);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.textBox_Name);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(159, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(929, 611);
+            this.panel1.TabIndex = 0;
             // 
             // textBox1_id
             // 
-            textBox1_id.ForeColor = Color.Black;
-            textBox1_id.Location = new Point(142, 108);
-            textBox1_id.Name = "textBox1_id";
-            textBox1_id.Size = new Size(200, 33);
-            textBox1_id.TabIndex = 17;
-            textBox1_id.TextChanged += textBox1_id_TextChanged;
+            this.textBox1_id.ForeColor = System.Drawing.Color.Black;
+            this.textBox1_id.Location = new System.Drawing.Point(142, 108);
+            this.textBox1_id.Name = "textBox1_id";
+            this.textBox1_id.Size = new System.Drawing.Size(200, 33);
+            this.textBox1_id.TabIndex = 17;
             // 
             // dataGridView1_category
             // 
-            dataGridView1_category.BackgroundColor = Color.White;
-            dataGridView1_category.ColumnHeadersHeight = 24;
-            dataGridView1_category.Location = new Point(366, 108);
-            dataGridView1_category.Name = "dataGridView1_category";
-            dataGridView1_category.RowHeadersWidth = 51;
-            dataGridView1_category.Size = new Size(550, 490);
-            dataGridView1_category.StandardTab = true;
-            dataGridView1_category.TabIndex = 16;
-            dataGridView1_category.CellContentClick += dataGridView1_category_CellContentClick;
+            this.dataGridView1_category.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1_category.ColumnHeadersHeight = 24;
+            this.dataGridView1_category.Location = new System.Drawing.Point(366, 108);
+            this.dataGridView1_category.Name = "dataGridView1_category";
+            this.dataGridView1_category.RowHeadersWidth = 51;
+            this.dataGridView1_category.Size = new System.Drawing.Size(550, 490);
+            this.dataGridView1_category.StandardTab = true;
+            this.dataGridView1_category.TabIndex = 16;
+            this.dataGridView1_category.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_category_CellContentClick_1);
             // 
             // label7_manageCat
             // 
-            label7_manageCat.AutoSize = true;
-            label7_manageCat.Font = new Font("Sitka Display", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7_manageCat.ForeColor = Color.White;
-            label7_manageCat.Location = new Point(338, 4);
-            label7_manageCat.Name = "label7_manageCat";
-            label7_manageCat.Size = new Size(354, 49);
-            label7_manageCat.TabIndex = 15;
-            label7_manageCat.Text = "MANAGE CATEGORIES";
+            this.label7_manageCat.AutoSize = true;
+            this.label7_manageCat.Font = new System.Drawing.Font("Sitka Display", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7_manageCat.ForeColor = System.Drawing.Color.White;
+            this.label7_manageCat.Location = new System.Drawing.Point(338, 4);
+            this.label7_manageCat.Name = "label7_manageCat";
+            this.label7_manageCat.Size = new System.Drawing.Size(354, 49);
+            this.label7_manageCat.TabIndex = 15;
+            this.label7_manageCat.Text = "MANAGE CATEGORIES";
             // 
             // button3_Delete
             // 
-            button3_Delete.BackColor = Color.CornflowerBlue;
-            button3_Delete.FlatAppearance.BorderSize = 0;
-            button3_Delete.FlatStyle = FlatStyle.Flat;
-            button3_Delete.Font = new Font("Sitka Display", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3_Delete.ForeColor = Color.White;
-            button3_Delete.Location = new Point(248, 275);
-            button3_Delete.Name = "button3_Delete";
-            button3_Delete.Size = new Size(94, 43);
-            button3_Delete.TabIndex = 12;
-            button3_Delete.Text = "Delete";
-            button3_Delete.UseVisualStyleBackColor = false;
-            button3_Delete.Click += button3_Delete_Click;
+            this.button3_Delete.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button3_Delete.FlatAppearance.BorderSize = 0;
+            this.button3_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3_Delete.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3_Delete.ForeColor = System.Drawing.Color.White;
+            this.button3_Delete.Location = new System.Drawing.Point(248, 275);
+            this.button3_Delete.Name = "button3_Delete";
+            this.button3_Delete.Size = new System.Drawing.Size(94, 43);
+            this.button3_Delete.TabIndex = 12;
+            this.button3_Delete.Text = "Delete";
+            this.button3_Delete.UseVisualStyleBackColor = false;
+            this.button3_Delete.Click += new System.EventHandler(this.button3_Delete_Click_1);
             // 
             // button2_Update
             // 
-            button2_Update.BackColor = Color.CornflowerBlue;
-            button2_Update.FlatAppearance.BorderSize = 0;
-            button2_Update.FlatStyle = FlatStyle.Flat;
-            button2_Update.Font = new Font("Sitka Display", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2_Update.ForeColor = Color.White;
-            button2_Update.Location = new Point(146, 275);
-            button2_Update.Name = "button2_Update";
-            button2_Update.Size = new Size(94, 43);
-            button2_Update.TabIndex = 11;
-            button2_Update.Text = "Update";
-            button2_Update.UseVisualStyleBackColor = false;
-            button2_Update.Click += button2_Update_Click;
+            this.button2_Update.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button2_Update.FlatAppearance.BorderSize = 0;
+            this.button2_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2_Update.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2_Update.ForeColor = System.Drawing.Color.White;
+            this.button2_Update.Location = new System.Drawing.Point(146, 275);
+            this.button2_Update.Name = "button2_Update";
+            this.button2_Update.Size = new System.Drawing.Size(94, 43);
+            this.button2_Update.TabIndex = 11;
+            this.button2_Update.Text = "Update";
+            this.button2_Update.UseVisualStyleBackColor = false;
+            this.button2_Update.Click += new System.EventHandler(this.button2_Update_Click_1);
             // 
             // button1_Add
             // 
-            button1_Add.BackColor = Color.CornflowerBlue;
-            button1_Add.FlatAppearance.BorderSize = 0;
-            button1_Add.FlatStyle = FlatStyle.Flat;
-            button1_Add.Font = new Font("Sitka Display", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1_Add.ForeColor = Color.White;
-            button1_Add.Location = new Point(46, 275);
-            button1_Add.Name = "button1_Add";
-            button1_Add.Size = new Size(94, 43);
-            button1_Add.TabIndex = 10;
-            button1_Add.Text = "Add";
-            button1_Add.UseVisualStyleBackColor = false;
-            button1_Add.Click += button1_Add_Click;
+            this.button1_Add.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button1_Add.FlatAppearance.BorderSize = 0;
+            this.button1_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1_Add.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1_Add.ForeColor = System.Drawing.Color.White;
+            this.button1_Add.Location = new System.Drawing.Point(46, 275);
+            this.button1_Add.Name = "button1_Add";
+            this.button1_Add.Size = new System.Drawing.Size(94, 43);
+            this.button1_Add.TabIndex = 10;
+            this.button1_Add.Text = "Add";
+            this.button1_Add.UseVisualStyleBackColor = false;
+            this.button1_Add.Click += new System.EventHandler(this.button1_Add_Click_1);
             // 
             // textBox_des
             // 
-            textBox_des.ForeColor = Color.Black;
-            textBox_des.Location = new Point(142, 196);
-            textBox_des.Name = "textBox_des";
-            textBox_des.Size = new Size(200, 33);
-            textBox_des.TabIndex = 5;
+            this.textBox_des.ForeColor = System.Drawing.Color.Black;
+            this.textBox_des.Location = new System.Drawing.Point(142, 196);
+            this.textBox_des.Name = "textBox_des";
+            this.textBox_des.Size = new System.Drawing.Size(200, 33);
+            this.textBox_des.TabIndex = 5;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Sitka Display", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(13, 196);
-            label4.Name = "label4";
-            label4.Size = new Size(129, 33);
-            label4.TabIndex = 4;
-            label4.Text = "Description";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(13, 196);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 33);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Description";
             // 
             // textBox_Name
             // 
-            textBox_Name.ForeColor = Color.Black;
-            textBox_Name.Location = new Point(142, 150);
-            textBox_Name.Name = "textBox_Name";
-            textBox_Name.Size = new Size(200, 33);
-            textBox_Name.TabIndex = 3;
+            this.textBox_Name.ForeColor = System.Drawing.Color.Black;
+            this.textBox_Name.Location = new System.Drawing.Point(142, 150);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(200, 33);
+            this.textBox_Name.TabIndex = 3;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Sitka Display", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(13, 152);
-            label3.Name = "label3";
-            label3.Size = new Size(71, 33);
-            label3.TabIndex = 2;
-            label3.Text = "Name";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(13, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(71, 33);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Name";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Sitka Display", 13.7999992F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(13, 108);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 33);
-            label2.TabIndex = 0;
-            label2.Text = "ID";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(13, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 33);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "ID";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Control;
-            label1.Font = new Font("Sitka Display", 16.1999989F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.CornflowerBlue;
-            label1.Location = new Point(1071, -12);
-            label1.Name = "label1";
-            label1.Size = new Size(33, 39);
-            label1.TabIndex = 1;
-            label1.Text = "X";
-            label1.Click += label1_Click;
-            label1.MouseEnter += label1_MouseEnter;
-            label1.MouseLeave += label1_MouseLeave;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
+            this.label1.Font = new System.Drawing.Font("Sitka Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Location = new System.Drawing.Point(1071, -12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 39);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "X";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter_1);
+            this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
             // button5_seller
             // 
-            button5_seller.BackColor = SystemColors.Control;
-            button5_seller.FlatAppearance.BorderSize = 0;
-            button5_seller.FlatStyle = FlatStyle.Flat;
-            button5_seller.Font = new Font("Sitka Display", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5_seller.ForeColor = Color.CornflowerBlue;
-            button5_seller.Location = new Point(18, 82);
-            button5_seller.Name = "button5_seller";
-            button5_seller.Size = new Size(135, 52);
-            button5_seller.TabIndex = 16;
-            button5_seller.Text = "Seller";
-            button5_seller.UseVisualStyleBackColor = false;
+            this.button5_seller.BackColor = System.Drawing.SystemColors.Control;
+            this.button5_seller.FlatAppearance.BorderSize = 0;
+            this.button5_seller.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5_seller.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5_seller.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button5_seller.Location = new System.Drawing.Point(18, 82);
+            this.button5_seller.Name = "button5_seller";
+            this.button5_seller.Size = new System.Drawing.Size(135, 52);
+            this.button5_seller.TabIndex = 16;
+            this.button5_seller.Text = "Seller";
+            this.button5_seller.UseVisualStyleBackColor = false;
             // 
             // button6_product
             // 
-            button6_product.BackColor = SystemColors.Control;
-            button6_product.FlatAppearance.BorderSize = 0;
-            button6_product.FlatStyle = FlatStyle.Flat;
-            button6_product.Font = new Font("Sitka Display", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6_product.ForeColor = Color.CornflowerBlue;
-            button6_product.Location = new Point(18, 173);
-            button6_product.Name = "button6_product";
-            button6_product.Size = new Size(140, 52);
-            button6_product.TabIndex = 17;
-            button6_product.Text = "Product";
-            button6_product.UseVisualStyleBackColor = false;
-            button6_product.Click += button6_product_Click;
+            this.button6_product.BackColor = System.Drawing.SystemColors.Control;
+            this.button6_product.FlatAppearance.BorderSize = 0;
+            this.button6_product.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6_product.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6_product.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button6_product.Location = new System.Drawing.Point(18, 173);
+            this.button6_product.Name = "button6_product";
+            this.button6_product.Size = new System.Drawing.Size(140, 52);
+            this.button6_product.TabIndex = 17;
+            this.button6_product.Text = "Product";
+            this.button6_product.UseVisualStyleBackColor = false;
             // 
             // button7_selling
             // 
-            button7_selling.BackColor = SystemColors.Control;
-            button7_selling.FlatAppearance.BorderSize = 0;
-            button7_selling.FlatStyle = FlatStyle.Flat;
-            button7_selling.Font = new Font("Sitka Display", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7_selling.ForeColor = Color.CornflowerBlue;
-            button7_selling.Location = new Point(18, 267);
-            button7_selling.Name = "button7_selling";
-            button7_selling.Size = new Size(140, 52);
-            button7_selling.TabIndex = 18;
-            button7_selling.Text = "Selling";
-            button7_selling.UseVisualStyleBackColor = false;
+            this.button7_selling.BackColor = System.Drawing.SystemColors.Control;
+            this.button7_selling.FlatAppearance.BorderSize = 0;
+            this.button7_selling.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7_selling.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7_selling.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button7_selling.Location = new System.Drawing.Point(18, 267);
+            this.button7_selling.Name = "button7_selling";
+            this.button7_selling.Size = new System.Drawing.Size(140, 52);
+            this.button7_selling.TabIndex = 18;
+            this.button7_selling.Text = "Selling";
+            this.button7_selling.UseVisualStyleBackColor = false;
             // 
             // button8_logout
             // 
-            button8_logout.BackColor = SystemColors.Control;
-            button8_logout.FlatAppearance.BorderSize = 0;
-            button8_logout.FlatStyle = FlatStyle.Flat;
-            button8_logout.Font = new Font("Sitka Display", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8_logout.ForeColor = Color.CornflowerBlue;
-            button8_logout.Location = new Point(18, 585);
-            button8_logout.Name = "button8_logout";
-            button8_logout.Size = new Size(140, 52);
-            button8_logout.TabIndex = 19;
-            button8_logout.Text = "Logout";
-            button8_logout.UseVisualStyleBackColor = false;
-            button8_logout.Click += button8_logout_Click;
-            button8_logout.MouseEnter += button8_logout_MouseEnter;
-            button8_logout.MouseLeave += button8_logout_MouseLeave;
+            this.button8_logout.BackColor = System.Drawing.SystemColors.Control;
+            this.button8_logout.FlatAppearance.BorderSize = 0;
+            this.button8_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8_logout.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8_logout.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.button8_logout.Location = new System.Drawing.Point(18, 585);
+            this.button8_logout.Name = "button8_logout";
+            this.button8_logout.Size = new System.Drawing.Size(140, 52);
+            this.button8_logout.TabIndex = 19;
+            this.button8_logout.Text = "Logout";
+            this.button8_logout.UseVisualStyleBackColor = false;
+            this.button8_logout.Click += new System.EventHandler(this.button8_logout_Click_1);
+            this.button8_logout.MouseEnter += new System.EventHandler(this.button8_logout_MouseEnter_1);
+            this.button8_logout.MouseLeave += new System.EventHandler(this.button8_logout_MouseLeave_1);
             // 
             // CategoryForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 29F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1100, 650);
-            Controls.Add(button8_logout);
-            Controls.Add(button7_selling);
-            Controls.Add(button6_product);
-            Controls.Add(button5_seller);
-            Controls.Add(label1);
-            Controls.Add(panel1);
-            Font = new Font("Sitka Display", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
-            Name = "CategoryForm";
-            Text = "CategoryForm";
-            Load += CategoryForm_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1_category).EndInit();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 29F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1100, 650);
+            this.Controls.Add(this.button8_logout);
+            this.Controls.Add(this.button7_selling);
+            this.Controls.Add(this.button6_product);
+            this.Controls.Add(this.button5_seller);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Font = new System.Drawing.Font("Sitka Display", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "CategoryForm";
+            this.Text = "CategoryForm";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_category)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
