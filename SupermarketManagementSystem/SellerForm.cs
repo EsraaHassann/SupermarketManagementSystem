@@ -47,7 +47,7 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Seller VALUES (" + TextBox_id.Text + ",'" + TextBox_name.Text + "'," + TextBox_age.Text + "," + TextBox_phone.Text + ",'" + TextBox_pass.Text + "')";
+                string insertQuery = "INSERT INTO Seller VALUES (" + TextBox_id.Text + ",'" + TextBox_name.Text + "','" + TextBox_age.Text + "','" + TextBox_phone.Text + "'," + TextBox_pass.Text + "')";
                 SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
                 dBCon.OpenCon();
                 command.ExecuteNonQuery();
@@ -87,18 +87,73 @@ namespace SupermarketManagementSystem
         }
 
         private void Update_Click(object sender, EventArgs e)
-        {
-
+            
+        {/*
+            try
+            {
+                if (TextBox_id.Text == "" || TextBox_name.Text == "" ||  TextBox_age.Text == "" || TextBox_phone.Text == "" || TextBox_pass.Text == "")
+                {
+                    MessageBox.Show("Missing information", "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if ((MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    {
+                        string updateQuery = "Update Seller SET sellerName = '" + TextBox_name.Text + "',SellerAge=" + TextBox_age.Text + ",SellerPhone=" + TextBox_phone.Text + ",Sellerpass=" + TextBox_pass.Text + "'WHERE SellerId= " + TextBox_id.Text + "";
+                        SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
+                        dBCon.OpenCon();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Seller updated succesfully", "Update information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dBCon.CloseCon();
+                        getTable();
+                        clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
         }
 
         private void dataGridView_seller_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        {/*
+           TextBox_id.Text = dataGridView_seller.SelectedRows[0].Cells[0].Value.ToString();
+            TextBox_name.Text = dataGridView_seller.SelectedRows[0].Cells[1].Value.ToString();
+            TextBox_age.Text= dataGridView_seller.SelectedRows[0].Cells[2].Value.ToString();
+            TextBox_phone.Text= dataGridView_seller.SelectedRows[0].Cells[3].Value.ToString();
+            TextBox_pass.Text = dataGridView_seller.SelectedRows[0].Cells[4].Value.ToString();*/
         }
 
         private void SellerForm_Load(object sender, EventArgs e)
         {
             getTable();
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        { /*
+            try
+            {
+                if (TextBox_id.Text == "")
+                {
+                    MessageBox.Show("Missing information", "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string deleteQuery = "deleted from seller where SellerId =" + TextBox_id.Text + "";
+                    SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Seller deleted succesfully", "delete information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBCon.CloseCon();
+                    getTable();
+                    clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }*/
         }
     }
 }

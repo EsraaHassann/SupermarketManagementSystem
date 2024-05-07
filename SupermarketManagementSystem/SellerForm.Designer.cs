@@ -115,7 +115,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Sitka Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(1060, 0);
+            this.label1.Location = new System.Drawing.Point(1245, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 40);
             this.label1.TabIndex = 21;
@@ -144,7 +144,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(148, 39);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(929, 611);
+            this.panel1.Size = new System.Drawing.Size(1131, 611);
             this.panel1.TabIndex = 20;
             // 
             // TextBox_phone
@@ -162,6 +162,7 @@
             this.TextBox_pass.Name = "TextBox_pass";
             this.TextBox_pass.Size = new System.Drawing.Size(200, 22);
             this.TextBox_pass.TabIndex = 20;
+            this.TextBox_pass.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -197,10 +198,10 @@
             // 
             this.dataGridView_seller.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_seller.ColumnHeadersHeight = 24;
-            this.dataGridView_seller.Location = new System.Drawing.Point(366, 108);
+            this.dataGridView_seller.Location = new System.Drawing.Point(427, 79);
             this.dataGridView_seller.Name = "dataGridView_seller";
             this.dataGridView_seller.RowHeadersWidth = 51;
-            this.dataGridView_seller.Size = new System.Drawing.Size(550, 490);
+            this.dataGridView_seller.Size = new System.Drawing.Size(695, 519);
             this.dataGridView_seller.StandardTab = true;
             this.dataGridView_seller.TabIndex = 16;
             this.dataGridView_seller.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_seller_CellContentClick);
@@ -230,6 +231,7 @@
             this.Delete.TabIndex = 12;
             this.Delete.Text = "Delete";
             this.Delete.UseVisualStyleBackColor = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Update
             // 
@@ -315,7 +317,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 700);
+            this.ClientSize = new System.Drawing.Size(1282, 700);
             this.Controls.Add(this.button8_logout);
             this.Controls.Add(this.button7_selling);
             this.Controls.Add(this.button6_product);
