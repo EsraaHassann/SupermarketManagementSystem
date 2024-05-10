@@ -82,5 +82,19 @@ namespace SupermarketManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_seller_Click(object sender, EventArgs e)
+        {
+            SellerForm seller = new SellerForm();
+            seller.Show();
+            this.Hide();
+        }
+
+        private void button_selling_Click(object sender, EventArgs e)
+        {
+            //SellingForm selling = new SellingForm();
+            //selling.Show();
+            //this.Hide();
+        }
     }
 }

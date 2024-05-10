@@ -10,7 +10,7 @@ namespace SupermarketManagementSystem
     class DBConnect
     {
 
-        private SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Nada\OneDrive\Documents\superr.mdf;Integrated Security=True;Connect Timeout=30");
+        private SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\computer\Documents\SupermarketManagementSystem.mdf;Integrated Security=True;Connect Timeout=30");
 
      
         public SqlConnection GetCon()

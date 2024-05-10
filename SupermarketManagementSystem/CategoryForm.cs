@@ -152,14 +152,16 @@ namespace SupermarketManagementSystem
 
         private void button7_selling_Click(object sender, EventArgs e)
         {
-
+            //SellingForm selling = new SellingForm();
+            //selling.Show();
+            //this.Hide();
         }
 
         private void button6_product_Click_1(object sender, EventArgs e)
         {
-            //ProductForm product = new ProductForm();
-            //product.Show (); 
-            //this.Hide();   
+            ProductForm product = new ProductForm();
+            product.Show();
+            this.Hide();
         }
 
         private void button5_seller_Click(object sender, EventArgs e)
