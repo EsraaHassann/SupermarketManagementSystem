@@ -68,7 +68,6 @@
             this.button_selling.TabIndex = 24;
             this.button_selling.Text = "Selling";
             this.button_selling.UseVisualStyleBackColor = false;
-            this.button_selling.Click += new System.EventHandler(this.button_selling_Click);
             // 
             // button_category
             // 
@@ -98,7 +97,6 @@
             this.button_seller.TabIndex = 22;
             this.button_seller.Text = "Seller";
             this.button_seller.UseVisualStyleBackColor = false;
-            this.button_seller.Click += new System.EventHandler(this.button_seller_Click);
             // 
             // label2
             // 
