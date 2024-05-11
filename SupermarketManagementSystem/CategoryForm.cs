@@ -28,9 +28,9 @@ namespace SupermarketManagementSystem
 
         private void button8_logout_Click_1(object sender, EventArgs e)
         {
-            //LoginForm login = new LoginForm();
-            //login.Show();
-            //this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
         }
 
         private void button1_Add_Click_1(object sender, EventArgs e)

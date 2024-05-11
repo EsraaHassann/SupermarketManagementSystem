@@ -102,5 +102,12 @@ namespace SupermarketManagementSystem
             }
 
         }
+
+        private void button_logout_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
+        }
     }
 }

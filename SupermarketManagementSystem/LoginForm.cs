@@ -67,5 +67,10 @@ namespace SupermarketManagementSystem
         {
 
         }
+
+        private void Button_login_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

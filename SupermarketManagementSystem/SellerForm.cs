@@ -172,5 +172,12 @@ namespace SupermarketManagementSystem
             //selling.Show();
             //this.Hide();
         }
+
+        private void button8_logout_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
+        }
     }
 }
