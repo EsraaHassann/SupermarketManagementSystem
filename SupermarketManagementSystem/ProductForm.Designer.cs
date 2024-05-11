@@ -68,6 +68,7 @@
             this.button_selling.TabIndex = 24;
             this.button_selling.Text = "Selling";
             this.button_selling.UseVisualStyleBackColor = false;
+            this.button_selling.Click += new System.EventHandler(this.button_selling_Click);
             // 
             // button_category
             // 
@@ -97,6 +98,7 @@
             this.button_seller.TabIndex = 22;
             this.button_seller.Text = "Seller";
             this.button_seller.UseVisualStyleBackColor = false;
+            this.button_seller.Click += new System.EventHandler(this.button_seller_Click);
             // 
             // label2
             // 
@@ -106,7 +108,7 @@
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label2.Location = new System.Drawing.Point(1071, 2);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 32);
+            this.label2.Size = new System.Drawing.Size(34, 40);
             this.label2.TabIndex = 21;
             this.label2.Text = "X";
             // 
@@ -154,7 +156,7 @@
             this.comboBox_search.FormattingEnabled = true;
             this.comboBox_search.Location = new System.Drawing.Point(481, 67);
             this.comboBox_search.Name = "comboBox_search";
-            this.comboBox_search.Size = new System.Drawing.Size(200, 31);
+            this.comboBox_search.Size = new System.Drawing.Size(200, 37);
             this.comboBox_search.TabIndex = 23;
             // 
             // comboBox_category
@@ -162,7 +164,7 @@
             this.comboBox_category.FormattingEnabled = true;
             this.comboBox_category.Location = new System.Drawing.Point(142, 285);
             this.comboBox_category.Name = "comboBox_category";
-            this.comboBox_category.Size = new System.Drawing.Size(200, 31);
+            this.comboBox_category.Size = new System.Drawing.Size(200, 37);
             this.comboBox_category.TabIndex = 21;
             // 
             // category
@@ -172,7 +174,7 @@
             this.category.ForeColor = System.Drawing.Color.White;
             this.category.Location = new System.Drawing.Point(13, 285);
             this.category.Name = "category";
-            this.category.Size = new System.Drawing.Size(85, 28);
+            this.category.Size = new System.Drawing.Size(103, 33);
             this.category.TabIndex = 20;
             this.category.Text = "Category";
             // 
@@ -181,7 +183,7 @@
             this.textBox_qty.ForeColor = System.Drawing.Color.Black;
             this.textBox_qty.Location = new System.Drawing.Point(142, 241);
             this.textBox_qty.Name = "textBox_qty";
-            this.textBox_qty.Size = new System.Drawing.Size(200, 28);
+            this.textBox_qty.Size = new System.Drawing.Size(200, 33);
             this.textBox_qty.TabIndex = 19;
             // 
             // Quantity
@@ -191,7 +193,7 @@
             this.Quantity.ForeColor = System.Drawing.Color.White;
             this.Quantity.Location = new System.Drawing.Point(13, 241);
             this.Quantity.Name = "Quantity";
-            this.Quantity.Size = new System.Drawing.Size(82, 28);
+            this.Quantity.Size = new System.Drawing.Size(101, 33);
             this.Quantity.TabIndex = 18;
             this.Quantity.Text = "Quantity";
             // 
@@ -200,7 +202,7 @@
             this.textBox_id.ForeColor = System.Drawing.Color.Black;
             this.textBox_id.Location = new System.Drawing.Point(142, 108);
             this.textBox_id.Name = "textBox_id";
-            this.textBox_id.Size = new System.Drawing.Size(200, 28);
+            this.textBox_id.Size = new System.Drawing.Size(200, 33);
             this.textBox_id.TabIndex = 17;
             // 
             // dataGridView_products
@@ -221,7 +223,7 @@
             this.label_manageProducts.ForeColor = System.Drawing.Color.White;
             this.label_manageProducts.Location = new System.Drawing.Point(338, 4);
             this.label_manageProducts.Name = "label_manageProducts";
-            this.label_manageProducts.Size = new System.Drawing.Size(260, 39);
+            this.label_manageProducts.Size = new System.Drawing.Size(315, 48);
             this.label_manageProducts.TabIndex = 15;
             this.label_manageProducts.Text = "MANAGE PRODUCTS";
             // 
@@ -274,7 +276,7 @@
             this.textBox_price.ForeColor = System.Drawing.Color.Black;
             this.textBox_price.Location = new System.Drawing.Point(142, 196);
             this.textBox_price.Name = "textBox_price";
-            this.textBox_price.Size = new System.Drawing.Size(200, 28);
+            this.textBox_price.Size = new System.Drawing.Size(200, 33);
             this.textBox_price.TabIndex = 5;
             // 
             // price
@@ -284,7 +286,7 @@
             this.price.ForeColor = System.Drawing.Color.White;
             this.price.Location = new System.Drawing.Point(13, 196);
             this.price.Name = "price";
-            this.price.Size = new System.Drawing.Size(52, 28);
+            this.price.Size = new System.Drawing.Size(64, 33);
             this.price.TabIndex = 4;
             this.price.Text = "price";
             // 
@@ -293,7 +295,7 @@
             this.textBox_name.ForeColor = System.Drawing.Color.Black;
             this.textBox_name.Location = new System.Drawing.Point(142, 150);
             this.textBox_name.Name = "textBox_name";
-            this.textBox_name.Size = new System.Drawing.Size(200, 28);
+            this.textBox_name.Size = new System.Drawing.Size(200, 33);
             this.textBox_name.TabIndex = 3;
             // 
             // name
@@ -303,7 +305,7 @@
             this.name.ForeColor = System.Drawing.Color.White;
             this.name.Location = new System.Drawing.Point(13, 152);
             this.name.Name = "name";
-            this.name.Size = new System.Drawing.Size(59, 28);
+            this.name.Size = new System.Drawing.Size(71, 33);
             this.name.TabIndex = 2;
             this.name.Text = "Name";
             // 
@@ -314,7 +316,7 @@
             this.ID.ForeColor = System.Drawing.Color.White;
             this.ID.Location = new System.Drawing.Point(13, 108);
             this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(30, 28);
+            this.ID.Size = new System.Drawing.Size(38, 33);
             this.ID.TabIndex = 0;
             this.ID.Text = "ID";
             // 
@@ -334,7 +336,7 @@
             // 
             // ProductForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 650);
             this.Controls.Add(this.button_logout);

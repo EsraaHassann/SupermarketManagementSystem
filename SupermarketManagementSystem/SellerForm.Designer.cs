@@ -80,6 +80,7 @@
             this.button7_selling.TabIndex = 24;
             this.button7_selling.Text = "Selling";
             this.button7_selling.UseVisualStyleBackColor = false;
+            this.button7_selling.Click += new System.EventHandler(this.button7_selling_Click);
             // 
             // button6_product
             // 
@@ -94,6 +95,7 @@
             this.button6_product.TabIndex = 23;
             this.button6_product.Text = "Product";
             this.button6_product.UseVisualStyleBackColor = false;
+            this.button6_product.Click += new System.EventHandler(this.button6_product_Click);
             // 
             // button5_seller
             // 
