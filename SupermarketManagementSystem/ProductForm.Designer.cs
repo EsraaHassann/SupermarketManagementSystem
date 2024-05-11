@@ -33,6 +33,7 @@
             this.button_seller = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_refresh = new System.Windows.Forms.Button();
             this.comboBox_search = new System.Windows.Forms.ComboBox();
             this.comboBox_category = new System.Windows.Forms.ComboBox();
             this.category = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.textBox_name = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
-            this.button_refresh = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_products)).BeginInit();
@@ -134,6 +134,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(929, 611);
             this.panel1.TabIndex = 20;
+            // 
+            // button_refresh
+            // 
+            this.button_refresh.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button_refresh.FlatAppearance.BorderSize = 0;
+            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_refresh.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_refresh.ForeColor = System.Drawing.Color.White;
+            this.button_refresh.Location = new System.Drawing.Point(703, 59);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(94, 43);
+            this.button_refresh.TabIndex = 25;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = false;
             // 
             // comboBox_search
             // 
@@ -238,6 +252,7 @@
             this.button_Update.TabIndex = 11;
             this.button_Update.Text = "Update";
             this.button_Update.UseVisualStyleBackColor = false;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
             // 
             // button_Add
             // 
@@ -302,20 +317,6 @@
             this.ID.Size = new System.Drawing.Size(30, 28);
             this.ID.TabIndex = 0;
             this.ID.Text = "ID";
-            // 
-            // button_refresh
-            // 
-            this.button_refresh.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button_refresh.FlatAppearance.BorderSize = 0;
-            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_refresh.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_refresh.ForeColor = System.Drawing.Color.White;
-            this.button_refresh.Location = new System.Drawing.Point(703, 59);
-            this.button_refresh.Name = "button_refresh";
-            this.button_refresh.Size = new System.Drawing.Size(94, 43);
-            this.button_refresh.TabIndex = 25;
-            this.button_refresh.Text = "Refresh";
-            this.button_refresh.UseVisualStyleBackColor = false;
             // 
             // button_logout
             // 

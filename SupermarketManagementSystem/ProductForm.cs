@@ -82,5 +82,25 @@ namespace SupermarketManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            try 
+            {
+                string updateQuery = "UPDATE Product SET ProdName='" + textBox_name.Text + "',ProdPrice=" + textBox_price.Text + ",ProdQty="+textBox_qty.Text+",ProdCat='"+comboBox_category.Text+"'";
+                SqlCommand command = new SqlCommand(updateQuery, dBConnect.GetCon());
+                dBConnect.OpenCon();
+                command.ExecuteNonQuery();
+                MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dBConnect.CloseCon();
+                getTable();
+                clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
