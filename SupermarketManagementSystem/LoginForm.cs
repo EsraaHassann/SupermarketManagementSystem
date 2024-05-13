@@ -13,6 +13,7 @@ namespace SupermarketManagementSystem
 {
     public partial class LoginForm : Form
     {
+        DBConnect dBCon = new DBConnect();
         public LoginForm()
         {
             InitializeComponent();
@@ -78,6 +79,13 @@ namespace SupermarketManagementSystem
             {
                 string selectQuery = "SELECT FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
                 DataTable table = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, dBCon.GetCon());
+                adapter.Fill(table);
+                if(table.Rows.Count>0)
+                {
+
+                }
+
             }
         }
     }
