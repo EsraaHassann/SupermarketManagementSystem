@@ -22,7 +22,7 @@ namespace SupermarketManagementSystem
         private void button_category_Click(object sender, EventArgs e)
         {
             CategoryForm categoryForm = new CategoryForm();
-            category.Show();
+            categoryForm.Show();
             this.Hide();
         }
 
@@ -68,14 +68,21 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Product VALUES(" + textBox_id.Text + ",'" + textBox_name.Text + "'," + textBox_price.Text + "," + textBox_qty.Text + ",'" + comboBox_category.Text + "')";
-                SqlCommand command = new SqlCommand(insertQuery, dBConnect.GetCon());
-                dBConnect.OpenCon();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Product Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dBConnect.CloseCon();
-                getTable();
-                clear();
+                if (textBox_id.Text == "" || textBox_name.Text == "" || textBox_price.Text == "" || textBox_qty.Text == "" || comboBox_category.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string insertQuery = "INSERT INTO Product VALUES(" + textBox_id.Text + ",'" + textBox_name.Text + "'," + textBox_price.Text + "," + textBox_qty.Text + ",'" + comboBox_category.Text + "')";
+                    SqlCommand command = new SqlCommand(insertQuery, dBConnect.GetCon());
+                    dBConnect.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Product Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBConnect.CloseCon();
+                    getTable();
+                    clear();
+                }
             }
             catch (Exception ex)
             {
@@ -87,14 +94,21 @@ namespace SupermarketManagementSystem
         {
             try 
             {
-                string updateQuery = "UPDATE Product SET ProdName='" + textBox_name.Text + "',ProdPrice=" + textBox_price.Text + ",ProdQty="+textBox_qty.Text+",ProdCat='"+comboBox_category.Text+"'";
-                SqlCommand command = new SqlCommand(updateQuery, dBConnect.GetCon());
-                dBConnect.OpenCon();
-                command.ExecuteNonQuery();
-                MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dBConnect.CloseCon();
-                getTable();
-                clear();
+                if (textBox_id.Text == "" || textBox_name.Text == "" || textBox_price.Text == "" || textBox_qty.Text == "" || comboBox_category.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string updateQuery = "UPDATE Product SET ProdName='" + textBox_name.Text + "',ProdPrice=" + textBox_price.Text + ",ProdQty=" + textBox_qty.Text + ",ProdCat='" + comboBox_category.Text + "' WHERE ProdId = " + textBox_id.Text + "";
+                    SqlCommand command = new SqlCommand(updateQuery, dBConnect.GetCon());
+                    dBConnect.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBConnect.CloseCon();
+                    getTable();
+                    clear();
+                }
             }
             catch (Exception ex)
             {
@@ -110,14 +124,117 @@ namespace SupermarketManagementSystem
             this.Hide();
         }
 
-        private void ID_Click(object sender, EventArgs e)
+        private void dataGridView_products_Click(object sender, EventArgs e)
         {
+            if (dataGridView_products.SelectedCells.Count > 0) // Check if any cell is selected
+            {
+                int rowIndex = dataGridView_products.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView_products.Rows[rowIndex];
 
+                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
+                if (!selectedRow.IsNewRow)
+                {
+                    textBox_id.Text = Convert.ToString(selectedRow.Cells["ProdId"].Value);
+                    textBox_name.Text = Convert.ToString(selectedRow.Cells["ProdName"].Value);
+                    textBox_price.Text = Convert.ToString(selectedRow.Cells["ProdPrice"].Value);
+                    textBox_qty.Text = Convert.ToString(selectedRow.Cells["ProdQty"].Value);
+                    comboBox_category.Text = Convert.ToString(selectedRow.Cells["ProdCat"].Value);
+                }
+            }
         }
 
-        private void textBox_id_TextChanged(object sender, EventArgs e)
+        private void button_Delete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (textBox_id.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    string deleteQuery = "DELETE FROM Product WHERE ProdId = " + textBox_id.Text + "";
+                    SqlCommand command = new SqlCommand(deleteQuery, dBConnect.GetCon());
+                    dBConnect.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Product Deleted Successfully", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBConnect.CloseCon();
+                    getTable();
+                    clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            getTable();
+        }
+
+        private void comboBox_search_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectQuery = "SELECT * FROM Product WHERE ProdCat = '" + comboBox_search.SelectedValue.ToString() + "'";
+                SqlCommand command = new SqlCommand(selectQuery, dBConnect.GetCon());
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                dataGridView_products.DataSource = table;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void label2_MouseEnter(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.Red; 
+        }
+
+        private void label2_MouseLeave(object sender, EventArgs e)
+        {
+            label2.ForeColor = Color.Goldenrod;
+        }
+
+        private void button8_logout_MouseEnter(object sender, EventArgs e)
+        {
+            button8_logout.ForeColor = Color.Red;
+        }
+
+        private void button8_logout_MouseLeave(object sender, EventArgs e)
+        {
+            button8_logout.ForeColor = Color.Goldenrod;
+        }
+
+        private void button8_logout_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button_seller_Click(object sender, EventArgs e)
+        {
+            SellerForm sellerForm = new SellerForm();
+            sellerForm.Show();
+            this.Hide();
+        }
+
+        //  private void button_selling_Click(object sender, EventArgs e)
+        //  {
+        //      SellingForm sellingForm = new SellingForm();
+        //      sellingForm.Show();
+        //      this.Hide()
+        //  }
     }
 }
