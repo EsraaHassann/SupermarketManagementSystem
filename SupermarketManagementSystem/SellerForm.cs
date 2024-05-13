@@ -198,5 +198,12 @@ namespace SupermarketManagementSystem
                 }
             }
         }
+
+        private void button5_category_Click(object sender, EventArgs e)
+        {
+            CategoryForm category = new CategoryForm();
+            category.Show();
+            this.Hide();
+        }
     }
 }
