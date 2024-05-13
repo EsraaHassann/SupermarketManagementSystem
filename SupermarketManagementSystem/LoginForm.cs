@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SupermarketManagementSystem
 {
@@ -66,6 +67,18 @@ namespace SupermarketManagementSystem
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+        private void Button_login_Click(object sender, EventArgs e)
+        {
+            if (comboBox_role.SelectedItem.ToString() == "Admin")
+            {
+
+            }
+            else
+            {
+                string selectQuery = "SELECT FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
+                DataTable table = new DataTable();
+            }
         }
     }
 }

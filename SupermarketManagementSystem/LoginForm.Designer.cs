@@ -1,4 +1,7 @@
 ﻿
+using System;
+using System.Data;
+
 namespace SupermarketManagementSystem
 {
     partial class LoginForm
@@ -278,6 +281,8 @@ namespace SupermarketManagementSystem
             this.PerformLayout();
 
         }
+
+        
 
         #endregion
 
