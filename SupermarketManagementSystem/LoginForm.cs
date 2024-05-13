@@ -67,17 +67,5 @@ namespace SupermarketManagementSystem
         {
 
         }
-
-        private void Button_login_Click(object sender, EventArgs e)
-        {
-            if(comboBox_role.SelectedItem.ToString()=="Admin")
-            {
-
-            }
-            else
-            {
-                string selectQuery = "SELECT * FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
-            }
-        }
     }
 }
