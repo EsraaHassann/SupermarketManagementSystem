@@ -99,7 +99,7 @@ namespace SupermarketManagementSystem
                 adapter.Fill(table);
                 if(table.Rows.Count>0)
                 {
-
+                        SellingForm selling = new SellingForm();
                 }
                 else
                 {
