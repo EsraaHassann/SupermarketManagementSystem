@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace SupermarketManagementSystem
 {
     public partial class LoginForm : Form
     {
+        DBConnect dBCon = new DBConnect();
         public LoginForm()
         {
             InitializeComponent();
@@ -67,10 +69,24 @@ namespace SupermarketManagementSystem
         {
 
         }
-
         private void Button_login_Click(object sender, EventArgs e)
         {
-            
+            if (comboBox_role.SelectedItem.ToString() == "Admin")
+            {
+
+            }
+            else
+            {
+                string selectQuery = "SELECT FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
+                DataTable table = new DataTable();
+                SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, dBCon.GetCon());
+                adapter.Fill(table);
+                if(table.Rows.Count>0)
+                {
+
+                }
+
+            }
         }
     }
 }
