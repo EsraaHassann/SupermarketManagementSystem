@@ -72,6 +72,10 @@ namespace SupermarketManagementSystem
         private void Button_login_Click(object sender, EventArgs e)
 
         {
+            if(TextBox_username.Text=="" ||TextBox_password.Text=="" )
+            {
+                MessageBox.Show("Please enter Username and Password","Missing infromation",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
             if(comboBox_role.SelectedIndex>-1)
             { 
             if (comboBox_role.SelectedItem.ToString() == "ADMIN")
