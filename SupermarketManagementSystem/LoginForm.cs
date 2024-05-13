@@ -80,7 +80,7 @@ namespace SupermarketManagementSystem
             { 
             if (comboBox_role.SelectedItem.ToString() == "ADMIN")
             {
-                if(TextBox_username.Text=="Admin"||TextBox_password.Text=="Admin123")
+                if(TextBox_username.Text=="Admin" && TextBox_password.Text=="Admin123")
                 {
                     ProductForm product = new ProductForm();
                     product.Show();
