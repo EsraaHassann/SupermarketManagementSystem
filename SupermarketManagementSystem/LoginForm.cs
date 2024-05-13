@@ -100,6 +100,8 @@ namespace SupermarketManagementSystem
                 if(table.Rows.Count>0)
                 {
                         SellingForm selling = new SellingForm();
+                        selling.Show();
+                        this.Hide();
                 }
                 else
                 {
