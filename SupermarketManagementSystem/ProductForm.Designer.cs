@@ -202,6 +202,7 @@
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(200, 33);
             this.textBox_id.TabIndex = 17;
+            this.textBox_id.TextChanged += new System.EventHandler(this.textBox_id_TextChanged);
             // 
             // dataGridView_products
             // 
@@ -221,7 +222,7 @@
             this.label_manageProducts.ForeColor = System.Drawing.Color.White;
             this.label_manageProducts.Location = new System.Drawing.Point(338, 4);
             this.label_manageProducts.Name = "label_manageProducts";
-            this.label_manageProducts.Size = new System.Drawing.Size(315, 48);
+            this.label_manageProducts.Size = new System.Drawing.Size(314, 48);
             this.label_manageProducts.TabIndex = 15;
             this.label_manageProducts.Text = "MANAGE PRODUCTS";
             // 
@@ -317,6 +318,7 @@
             this.ID.Size = new System.Drawing.Size(38, 33);
             this.ID.TabIndex = 0;
             this.ID.Text = "ID";
+            this.ID.Click += new System.EventHandler(this.ID_Click);
             // 
             // button_logout
             // 

@@ -208,6 +208,7 @@
             this.dataGridView_seller.StandardTab = true;
             this.dataGridView_seller.TabIndex = 16;
             this.dataGridView_seller.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_seller_CellContentClick);
+            this.dataGridView_seller.Click += new System.EventHandler(this.dataGridView_seller_Click);
             // 
             // label7_manageCat
             // 
@@ -216,7 +217,7 @@
             this.label7_manageCat.ForeColor = System.Drawing.Color.White;
             this.label7_manageCat.Location = new System.Drawing.Point(338, 4);
             this.label7_manageCat.Name = "label7_manageCat";
-            this.label7_manageCat.Size = new System.Drawing.Size(268, 48);
+            this.label7_manageCat.Size = new System.Drawing.Size(267, 48);
             this.label7_manageCat.TabIndex = 15;
             this.label7_manageCat.Text = "MANAGE SELLER";
             this.label7_manageCat.Click += new System.EventHandler(this.label7_manageCat_Click);
@@ -315,6 +316,7 @@
             this.label2.Size = new System.Drawing.Size(38, 33);
             this.label2.TabIndex = 0;
             this.label2.Text = "ID";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // SellerForm
             // 

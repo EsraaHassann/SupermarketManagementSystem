@@ -109,5 +109,15 @@ namespace SupermarketManagementSystem
             login.Show();
             this.Hide();
         }
+
+        private void ID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_id_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,16 +21,12 @@ namespace SupermarketManagementSystem
 
         private void getTable()
         {
-            string selectQuery = "SELECT * FROM Seller";
-            using (SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon()))
-            {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView_seller.DataSource = table;
-                }
-            }
+            string selectQuerry = "SELECT * FROM Seller";
+            SqlCommand command = new SqlCommand(selectQuerry, dBCon.GetCon());
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            dataGridView_seller.DataSource = table;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -88,32 +84,30 @@ namespace SupermarketManagementSystem
 
         private void Update_Click(object sender, EventArgs e)
 
-        {/*
+        {
             try
             {
-                if (TextBox_id.Text == "" || TextBox_name.Text == "" ||  TextBox_age.Text == "" || TextBox_phone.Text == "" || TextBox_pass.Text == "")
+                if (TextBox_id.Text == "" || TextBox_name.Text == "" || TextBox_age.Text == "" || TextBox_phone.Text == "" || TextBox_pass.Text == "")
                 {
-                    MessageBox.Show("Missing information", "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    if ((MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
-                    {
-                        string updateQuery = "Update Seller SET sellerName = '" + TextBox_name.Text + "',SellerAge=" + TextBox_age.Text + ",SellerPhone=" + TextBox_phone.Text + ",Sellerpass=" + TextBox_pass.Text + "'WHERE SellerId= " + TextBox_id.Text + "";
-                        SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
-                        dBCon.OpenCon();
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Seller updated succesfully", "Update information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dBCon.CloseCon();
-                        getTable();
-                        clear();
-                    }
+
+                    string updateQuery = "UPDATE Seller SET SellerName='" + TextBox_name.Text + "',SellerAge='" + TextBox_age.Text + "',SellerPhone='" + TextBox_phone.Text + "',SellerPass='" + TextBox_pass.Text + "'WHERE SellerId=" + TextBox_id.Text + "";
+                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Seller Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dBCon.CloseCon();
+                    getTable();
+                    clear();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         private void dataGridView_seller_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -132,30 +126,7 @@ namespace SupermarketManagementSystem
 
         private void Delete_Click(object sender, EventArgs e)
 
-        { /*
-            try
-            {
-                if (TextBox_id.Text == "")
-                {
-                    MessageBox.Show("Missing information", "Missing information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    string deleteQuery = "deleted from seller where SellerId =" + TextBox_id.Text + "";
-                    SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Seller deleted succesfully", "delete information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
-                    getTable();
-                    clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }*/
-
+        {
             
         }
 
@@ -178,6 +149,30 @@ namespace SupermarketManagementSystem
             LoginForm login = new LoginForm();
             login.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_seller_Click(object sender, EventArgs e)
+        {
+            if (dataGridView_seller.SelectedCells.Count > 0) // Check if any cell is selected
+            {
+                int rowIndex = dataGridView_seller.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView_seller.Rows[rowIndex];
+
+                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
+                if (!selectedRow.IsNewRow)
+                {
+                    TextBox_id.Text = Convert.ToString(selectedRow.Cells["SellerId"].Value);
+                    TextBox_name.Text = Convert.ToString(selectedRow.Cells["SellerName"].Value);
+                    TextBox_age.Text = Convert.ToString(selectedRow.Cells["SellerAge"].Value);
+                    TextBox_phone.Text = Convert.ToString(selectedRow.Cells["SellerPhone"].Value);
+                    TextBox_pass.Text = Convert.ToString(selectedRow.Cells["SellerPass"].Value);
+                }
+            }
         }
     }
 }
