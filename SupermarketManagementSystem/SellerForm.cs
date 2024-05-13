@@ -127,7 +127,31 @@ namespace SupermarketManagementSystem
         private void Delete_Click(object sender, EventArgs e)
 
         {
-            
+            try
+            {
+                if (TextBox_id.Text == "")
+                {
+                    MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if ((MessageBox.Show("Are you sure you want to delete this record?", "Delete Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                    {
+                        string deleteQuery = "DELETE FROM Seller WHERE SellerId=" + TextBox_id.Text + "";
+                        SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+                        dBCon.OpenCon();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Seller Deleted Successfully", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        dBCon.CloseCon();
+                        getTable();
+                        clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void button6_product_Click(object sender, EventArgs e)
