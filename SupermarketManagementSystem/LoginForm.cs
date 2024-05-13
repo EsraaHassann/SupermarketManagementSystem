@@ -70,23 +70,45 @@ namespace SupermarketManagementSystem
 
         }
         private void Button_login_Click(object sender, EventArgs e)
-        {
-            if (comboBox_role.SelectedItem.ToString() == "Admin")
-            {
 
+        {
+            if(comboBox_role.SelectedIndex>-1)
+            { 
+            if (comboBox_role.SelectedItem.ToString() == "ADMIN")
+            {
+                if(TextBox_username.Text=="Admin"||TextBox_password.Text=="Admin123")
+                {
+                    ProductForm product = new ProductForm();
+                    product.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("If you are Admin , Please Enter the correct id and Password", "Miss id", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
                 string selectQuery = "SELECT FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
-                DataTable table = new DataTable();
                 SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, dBCon.GetCon());
+                DataTable table = new DataTable();
                 adapter.Fill(table);
                 if(table.Rows.Count>0)
                 {
 
                 }
+                else
+                {
+                    MessageBox.Show("Wrong Username or Password", "Wrong Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
         }
+            else
+            {
+                MessageBox.Show("Please Select Role", "Wrong Information",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }
