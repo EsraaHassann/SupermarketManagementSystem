@@ -292,6 +292,7 @@ namespace SupermarketManagementSystem
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CategoryForm";
             this.Text = "CategoryForm";
+            this.Load += new System.EventHandler(this.CategoryForm_Load_1);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1_category)).EndInit();

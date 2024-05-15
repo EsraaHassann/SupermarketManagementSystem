@@ -13,7 +13,7 @@ namespace SupermarketManagementSystem
 {
     public partial class ProductForm : Form
     {
-        DBConnect dBConnect = new DBConnect();
+        DBConnect dBCon = new DBConnect();
         public ProductForm()
         {
             InitializeComponent();
@@ -35,7 +35,7 @@ namespace SupermarketManagementSystem
         private void getCategory()
         {
             string selectQuery = "SELECT * FROM Category";
-            SqlCommand command = new SqlCommand(selectQuery, dBConnect.GetCon());
+            SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -48,7 +48,7 @@ namespace SupermarketManagementSystem
         private void getTable()
         {
             string selectQuery = "SELECT * FROM Product";
-            SqlCommand command = new SqlCommand(selectQuery, dBConnect.GetCon());
+            SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon());
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -75,11 +75,11 @@ namespace SupermarketManagementSystem
                 else
                 {
                     string insertQuery = "INSERT INTO Product VALUES(" + textBox_id.Text + ",'" + textBox_name.Text + "'," + textBox_price.Text + "," + textBox_qty.Text + ",'" + comboBox_category.Text + "')";
-                    SqlCommand command = new SqlCommand(insertQuery, dBConnect.GetCon());
-                    dBConnect.OpenCon();
+                    SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Product Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBConnect.CloseCon();
+                    dBCon.CloseCon();
                     getTable();
                     clear();
                 }
@@ -101,11 +101,11 @@ namespace SupermarketManagementSystem
                 else
                 {
                     string updateQuery = "UPDATE Product SET ProdName='" + textBox_name.Text + "',ProdPrice=" + textBox_price.Text + ",ProdQty=" + textBox_qty.Text + ",ProdCat='" + comboBox_category.Text + "' WHERE ProdId = " + textBox_id.Text + "";
-                    SqlCommand command = new SqlCommand(updateQuery, dBConnect.GetCon());
-                    dBConnect.OpenCon();
+                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBConnect.CloseCon();
+                    dBCon.CloseCon();
                     getTable();
                     clear();
                 }
@@ -154,11 +154,11 @@ namespace SupermarketManagementSystem
                 else
                 {
                     string deleteQuery = "DELETE FROM Product WHERE ProdId = " + textBox_id.Text + "";
-                    SqlCommand command = new SqlCommand(deleteQuery, dBConnect.GetCon());
-                    dBConnect.OpenCon();
+                    SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
+                    dBCon.OpenCon();
                     command.ExecuteNonQuery();
                     MessageBox.Show("Product Deleted Successfully", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBConnect.CloseCon();
+                    dBCon.CloseCon();
                     getTable();
                     clear();
                 }
@@ -179,7 +179,7 @@ namespace SupermarketManagementSystem
             try
             {
                 string selectQuery = "SELECT * FROM Product WHERE ProdCat = '" + comboBox_search.SelectedValue.ToString() + "'";
-                SqlCommand command = new SqlCommand(selectQuery, dBConnect.GetCon());
+                SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon());
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
@@ -230,11 +230,16 @@ namespace SupermarketManagementSystem
             this.Hide();
         }
 
-        //  private void button_selling_Click(object sender, EventArgs e)
-        //  {
-        //      SellingForm sellingForm = new SellingForm();
-        //      sellingForm.Show();
-        //      this.Hide()
-        //  }
+        private void dataGridView_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button_selling_Click(object sender, EventArgs e)
+        {
+            SellingForm sellingForm = new SellingForm();
+            sellingForm.Show();
+            this.Hide();
+          }
     }
 }

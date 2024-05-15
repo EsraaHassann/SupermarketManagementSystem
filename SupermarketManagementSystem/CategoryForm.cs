@@ -152,9 +152,9 @@ namespace SupermarketManagementSystem
 
         private void button7_selling_Click(object sender, EventArgs e)
         {
-            //SellingForm selling = new SellingForm();
-            //selling.Show();
-            //this.Hide();
+            SellingForm selling = new SellingForm();
+            selling.Show();
+            this.Hide();
         }
 
         private void button6_product_Click_1(object sender, EventArgs e)
@@ -172,6 +172,11 @@ namespace SupermarketManagementSystem
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CategoryForm_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -57,7 +57,7 @@ namespace SupermarketManagementSystem
             this.guna2CircleButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2CircleButton1.ForeColor = System.Drawing.Color.White;
             this.guna2CircleButton1.Location = new System.Drawing.Point(-184, -21);
-            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2CircleButton1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2CircleButton1.Name = "guna2CircleButton1";
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(540, 502);
@@ -162,7 +162,7 @@ namespace SupermarketManagementSystem
             this.Button_login.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Button_login.ForeColor = System.Drawing.Color.Black;
             this.Button_login.Location = new System.Drawing.Point(377, 302);
-            this.Button_login.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Button_login.Margin = new System.Windows.Forms.Padding(4);
             this.Button_login.Name = "Button_login";
             this.Button_login.Size = new System.Drawing.Size(240, 55);
             this.Button_login.TabIndex = 7;
@@ -194,7 +194,9 @@ namespace SupermarketManagementSystem
             this.label_exit.Size = new System.Drawing.Size(42, 50);
             this.label_exit.TabIndex = 9;
             this.label_exit.Text = "x";
+            this.label_exit.Click += new System.EventHandler(this.label_exit_Click_1);
             this.label_exit.MouseEnter += new System.EventHandler(this.label_exit_MouseEnter);
+            this.label_exit.MouseLeave += new System.EventHandler(this.label_exit_MouseLeave_1);
             // 
             // label5
             // 
@@ -246,7 +248,7 @@ namespace SupermarketManagementSystem
             "ADMIN",
             "SELLER"});
             this.comboBox_role.Location = new System.Drawing.Point(528, 107);
-            this.comboBox_role.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_role.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_role.Name = "comboBox_role";
             this.comboBox_role.Size = new System.Drawing.Size(265, 29);
             this.comboBox_role.TabIndex = 13;
@@ -272,7 +274,7 @@ namespace SupermarketManagementSystem
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2CircleButton1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

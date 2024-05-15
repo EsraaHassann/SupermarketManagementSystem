@@ -116,5 +116,14 @@ namespace SupermarketManagementSystem
             }
         }
 
+        private void label_exit_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label_exit_MouseLeave_1(object sender, EventArgs e)
+        {
+            label1.ForeColor = Color.CornflowerBlue;
+        }
     }
 }
