@@ -426,7 +426,7 @@ namespace SupermarketManagementSystem
             this.label7_manageCat.AutoSize = true;
             this.label7_manageCat.Font = new System.Drawing.Font("Sitka Display", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7_manageCat.ForeColor = System.Drawing.Color.White;
-            this.label7_manageCat.Location = new System.Drawing.Point(554, 0);
+            this.label7_manageCat.Location = new System.Drawing.Point(554, 1);
             this.label7_manageCat.Name = "label7_manageCat";
             this.label7_manageCat.Size = new System.Drawing.Size(148, 48);
             this.label7_manageCat.TabIndex = 15;

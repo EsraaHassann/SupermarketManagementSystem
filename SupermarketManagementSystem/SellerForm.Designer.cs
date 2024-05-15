@@ -216,9 +216,9 @@
             this.label7_manageCat.AutoSize = true;
             this.label7_manageCat.Font = new System.Drawing.Font("Sitka Display", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7_manageCat.ForeColor = System.Drawing.Color.White;
-            this.label7_manageCat.Location = new System.Drawing.Point(338, 4);
+            this.label7_manageCat.Location = new System.Drawing.Point(419, 4);
             this.label7_manageCat.Name = "label7_manageCat";
-            this.label7_manageCat.Size = new System.Drawing.Size(267, 48);
+            this.label7_manageCat.Size = new System.Drawing.Size(268, 48);
             this.label7_manageCat.TabIndex = 15;
             this.label7_manageCat.Text = "MANAGE SELLER";
             this.label7_manageCat.Click += new System.EventHandler(this.label7_manageCat_Click);
@@ -323,7 +323,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 700);
+            this.ClientSize = new System.Drawing.Size(1282, 671);
             this.Controls.Add(this.button8_logout);
             this.Controls.Add(this.button7_selling);
             this.Controls.Add(this.button6_product);
