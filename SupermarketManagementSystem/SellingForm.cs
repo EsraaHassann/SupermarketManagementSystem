@@ -120,6 +120,7 @@ namespace SupermarketManagementSystem
         private void SellingFrom1_Load(object sender, EventArgs e)
         {
             label_date.Text = DateTime.Today.ToShortDateString();
+            label_seller.Text = LoginForm.sellerName;
             getTable();
             getCategory();
             getSellTable();
