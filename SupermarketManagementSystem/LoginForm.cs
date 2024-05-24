@@ -72,47 +72,52 @@ namespace SupermarketManagementSystem
         private void Button_login_Click(object sender, EventArgs e)
 
         {
-            if(TextBox_username.Text=="" ||TextBox_password.Text=="" )
+            if (TextBox_username.Text == "" && TextBox_password.Text == "")
             {
-                MessageBox.Show("Please enter Username and Password","Missing infromation",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            if(comboBox_role.SelectedIndex>-1)
-            { 
-            if (comboBox_role.SelectedItem.ToString() == "ADMIN")
-            {
-                if(TextBox_username.Text=="Admin" && TextBox_password.Text=="Admin123")
-                {
-                    ProductForm product = new ProductForm();
-                    product.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("If you are Admin , Please Enter the correct id and Password", "Miss id", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show("Please enter Username and Password", "Missing infromation", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                string selectQuery = "SELECT FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
-                SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, dBCon.GetCon());
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                if(table.Rows.Count>0)
-                {
-                        SellingForm selling = new SellingForm();
-                        selling.Show();
-                        this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong Username or Password", "Wrong Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
 
-            }
-        }
-            else
-            {
-                MessageBox.Show("Please Select Role", "Wrong Information",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+                if (comboBox_role.SelectedIndex > -1)
+                {
+                    if (comboBox_role.SelectedItem.ToString() == "ADMIN")
+                    {
+                        if (TextBox_username.Text == "Admin" && TextBox_password.Text == "Admin123")
+                        {
+                            ProductForm product = new ProductForm();
+                            product.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("If you are Admin , Please Enter the correct id and Password", "Miss id", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        string selectQuery = "SELECT FROM Seller WHERE SellerName='" + TextBox_username.Text + "' AND SellerPass='" + TextBox_password.Text + "'";
+                        SqlDataAdapter adapter = new SqlDataAdapter(selectQuery, dBCon.GetCon());
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+                        if (table.Rows.Count > 0)
+                        {
+                            SellingForm selling = new SellingForm();
+                            selling.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Wrong Username or Password", "Wrong Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Role", "Wrong Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
         }
 
