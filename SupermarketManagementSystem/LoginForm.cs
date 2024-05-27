@@ -74,7 +74,7 @@ namespace SupermarketManagementSystem
         private void Button_login_Click(object sender, EventArgs e)
 
         {
-            if (TextBox_username.Text == "" && TextBox_password.Text == "")
+            if (TextBox_username.Text == "" || TextBox_password.Text == "")
             {
                 MessageBox.Show("Please enter Username and Password", "Missing infromation", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
