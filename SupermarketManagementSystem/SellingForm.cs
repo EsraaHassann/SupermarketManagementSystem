@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DGVPrinterHelper;
+using SupermarketManagementSystem.Interfaces;
+using SupermarketManagementSystem.Factories;
 
 namespace SupermarketManagementSystem
 {
@@ -196,8 +198,12 @@ namespace SupermarketManagementSystem
 
         private void DataGridView_product_Click(object sender, EventArgs e)
         {
-            TextBox_name.Text = DataGridView_product.SelectedRows[0].Cells[0].Value.ToString();
-            textBox_price.Text = DataGridView_product.SelectedRows[0].Cells[1].Value.ToString();
+            //TextBox_name.Text = DataGridView_product.SelectedRows[0].Cells[0].Value.ToString();
+            //textBox_price.Text = DataGridView_product.SelectedRows[0].Cells[1].Value.ToString();
+            string productType = DataGridView_product.SelectedRows[0].Cells[0].Value.ToString();
+            Iproduct product = FactoryProduct.CreateProduct(productType);
+            TextBox_name.Text = product.Name;
+            textBox_price.Text = product.Price.ToString();
         }
     }
 }
