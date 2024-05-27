@@ -13,7 +13,7 @@ namespace SupermarketManagementSystem
 {
     public partial class SellerForm : Form
     {
-        /*private readonly ISellerRepository _sellerRepository;
+        private readonly ISellerRepository _sellerRepository;
         private readonly IUserInterface _userInterface;
 
         public SellerForm(ISellerRepository sellerRepository, IUserInterface userInterface)
@@ -21,7 +21,7 @@ namespace SupermarketManagementSystem
             InitializeComponent();
             _sellerRepository = sellerRepository;
             _userInterface = userInterface;
-        }*/
+        }
         DBConnect dBCon = new DBConnect();
         public SellerForm()
         {
