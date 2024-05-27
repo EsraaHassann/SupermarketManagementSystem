@@ -13,6 +13,7 @@ namespace SupermarketManagementSystem
     public partial class SplashForm : Form
     {
         private static SplashForm _instance;
+        //make the constructor private
         private SplashForm()
         {
             InitializeComponent();
