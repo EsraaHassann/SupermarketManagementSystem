@@ -169,6 +169,7 @@
     </Compile>
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="DBConnect.cs" />
+    <Compile Include="DeleteProductStrategy.cs" />
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="FactoryProduct.cs" />
     <Compile Include="ICategoryRepository.cs" />
