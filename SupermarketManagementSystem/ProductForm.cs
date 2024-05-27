@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using SupermarketManagementSystem.Interfaces;
 
 namespace SupermarketManagementSystem
 {
     public partial class ProductForm : Form
     {
-        DBConnect dBCon = new DBConnect();
+        private ProductContext productContext = new ProductContext();
+        private DBConnect dBCon = new DBConnect();
+
         public ProductForm()
         {
             InitializeComponent();
@@ -26,13 +29,13 @@ namespace SupermarketManagementSystem
             this.Hide();
         }
 
-        private void ProductForm_Load(Object sender, EventArgs e)
+        private void ProductForm_Load(object sender, EventArgs e)
         {
-            getCategory();
-            getTable();
+            LoadCategories();
+            LoadProducts();
         }
 
-        private void getCategory()
+        private void LoadCategories()
         {
             string selectQuery = "SELECT * FROM Category";
             SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon());
@@ -45,7 +48,7 @@ namespace SupermarketManagementSystem
             comboBox_search.ValueMember = "CatName";
         }
 
-        private void getTable()
+        private void LoadProducts()
         {
             string selectQuery = "SELECT * FROM Product";
             SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon());
@@ -68,19 +71,26 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                if (textBox_id.Text == "" || textBox_name.Text == "" || textBox_price.Text == "" || textBox_qty.Text == "" || comboBox_category.Text == "")
+                if (string.IsNullOrEmpty(textBox_id.Text) || string.IsNullOrEmpty(textBox_name.Text) || string.IsNullOrEmpty(textBox_price.Text) || string.IsNullOrEmpty(textBox_qty.Text) || string.IsNullOrEmpty(comboBox_category.Text))
                 {
                     MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    string insertQuery = "INSERT INTO Product VALUES(" + textBox_id.Text + ",'" + textBox_name.Text + "'," + textBox_price.Text + "," + textBox_qty.Text + ",'" + comboBox_category.Text + "')";
-                    SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
+                    Product product = new Product
+                    {
+                        Id = int.Parse(textBox_id.Text),
+                        Name = textBox_name.Text,
+                        Price = decimal.Parse(textBox_price.Text),
+                        Quantity = int.Parse(textBox_qty.Text),
+                        Category = comboBox_category.Text
+                    };
+
+                    productContext.SetStrategy(new AddProductStrategy());
+                    productContext.ExecuteStrategy(product);
+
                     MessageBox.Show("Product Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
-                    getTable();
+                    LoadProducts();
                     clear();
                 }
             }
@@ -92,21 +102,28 @@ namespace SupermarketManagementSystem
 
         private void button_Update_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
-                if (textBox_id.Text == "" || textBox_name.Text == "" || textBox_price.Text == "" || textBox_qty.Text == "" || comboBox_category.Text == "")
+                if (string.IsNullOrEmpty(textBox_id.Text) || string.IsNullOrEmpty(textBox_name.Text) || string.IsNullOrEmpty(textBox_price.Text) || string.IsNullOrEmpty(textBox_qty.Text) || string.IsNullOrEmpty(comboBox_category.Text))
                 {
                     MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    string updateQuery = "UPDATE Product SET ProdName='" + textBox_name.Text + "',ProdPrice=" + textBox_price.Text + ",ProdQty=" + textBox_qty.Text + ",ProdCat='" + comboBox_category.Text + "' WHERE ProdId = " + textBox_id.Text + "";
-                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
+                    Product product = new Product
+                    {
+                        Id = int.Parse(textBox_id.Text),
+                        Name = textBox_name.Text,
+                        Price = decimal.Parse(textBox_price.Text),
+                        Quantity = int.Parse(textBox_qty.Text),
+                        Category = comboBox_category.Text
+                    };
+
+                    productContext.SetStrategy(new UpdateProductStrategy());
+                    productContext.ExecuteStrategy(product);
+
                     MessageBox.Show("Product Updated Successfully", "Update Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
-                    getTable();
+                    LoadProducts();
                     clear();
                 }
             }
@@ -114,52 +131,28 @@ namespace SupermarketManagementSystem
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void button_logout_Click(object sender, EventArgs e)
-        {
-            LoginForm login = new LoginForm();
-            login.Show();
-            this.Hide();
-        }
-
-        private void dataGridView_products_Click(object sender, EventArgs e)
-        {
-            if (dataGridView_products.SelectedCells.Count > 0) // Check if any cell is selected
-            {
-                int rowIndex = dataGridView_products.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView_products.Rows[rowIndex];
-
-                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
-                if (!selectedRow.IsNewRow)
-                {
-                    textBox_id.Text = Convert.ToString(selectedRow.Cells["ProdId"].Value);
-                    textBox_name.Text = Convert.ToString(selectedRow.Cells["ProdName"].Value);
-                    textBox_price.Text = Convert.ToString(selectedRow.Cells["ProdPrice"].Value);
-                    textBox_qty.Text = Convert.ToString(selectedRow.Cells["ProdQty"].Value);
-                    comboBox_category.Text = Convert.ToString(selectedRow.Cells["ProdCat"].Value);
-                }
-            }
         }
 
         private void button_Delete_Click(object sender, EventArgs e)
         {
             try
             {
-                if (textBox_id.Text == "")
+                if (string.IsNullOrEmpty(textBox_id.Text))
                 {
                     MessageBox.Show("Missing Information", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    string deleteQuery = "DELETE FROM Product WHERE ProdId = " + textBox_id.Text + "";
-                    SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
+                    Product product = new Product
+                    {
+                        Id = int.Parse(textBox_id.Text)
+                    };
+
+                    productContext.SetStrategy(new DeleteProductStrategy());
+                    productContext.ExecuteStrategy(product);
+
                     MessageBox.Show("Product Deleted Successfully", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
-                    getTable();
+                    LoadProducts();
                     clear();
                 }
             }
@@ -171,14 +164,14 @@ namespace SupermarketManagementSystem
 
         private void button_refresh_Click(object sender, EventArgs e)
         {
-            getTable();
+            LoadProducts();
         }
 
         private void comboBox_search_SelectionChangeCommitted(object sender, EventArgs e)
         {
             try
             {
-                string selectQuery = "SELECT * FROM Product WHERE ProdCat = '" + comboBox_search.SelectedValue.ToString() + "'";
+                string selectQuery = $"SELECT * FROM Product WHERE ProdCat = '{comboBox_search.SelectedValue}'";
                 SqlCommand command = new SqlCommand(selectQuery, dBCon.GetCon());
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable table = new DataTable();
@@ -193,7 +186,7 @@ namespace SupermarketManagementSystem
 
         private void label2_MouseEnter(object sender, EventArgs e)
         {
-            label2.ForeColor = Color.Red; 
+            label2.ForeColor = Color.Red;
         }
 
         private void label2_MouseLeave(object sender, EventArgs e)
@@ -229,17 +222,5 @@ namespace SupermarketManagementSystem
             sellerForm.Show();
             this.Hide();
         }
-
-        private void dataGridView_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button_selling_Click(object sender, EventArgs e)
-        {
-            SellingForm sellingForm = new SellingForm();
-            sellingForm.Show();
-            this.Hide();
-          }
     }
 }
