@@ -8,11 +8,11 @@ using System.Windows.Forms;
 
 namespace SupermarketManagementSystem
 {
-    /*public interface IUserInterface
+    public interface IUserInterface
     {
         void ShowMessage(string message, string caption, MessageBoxButtons buttons, MessageBoxIcon icon);
         void ClearTextBoxes();
         void UpdateDataGridView(DataTable table);
-    }*/
+    }
 
 }
