@@ -177,6 +177,11 @@ namespace SupermarketManagementSystem
             this.Hide();
         }
 
+        private void TextBox_name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void DataGridView_product_Click(object sender, EventArgs e)
         {
             TextBox_name.Text = DataGridView_product.SelectedRows[0].Cells[0].Value.ToString();
