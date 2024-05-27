@@ -59,6 +59,7 @@ namespace SupermarketManagementSystem
             this.TextBox_name = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_sellList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView_product)).BeginInit();
@@ -73,7 +74,7 @@ namespace SupermarketManagementSystem
             this.button_logout.Font = new System.Drawing.Font("Sitka Display", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_logout.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.button_logout.Location = new System.Drawing.Point(-23, 687);
-            this.button_logout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_logout.Margin = new System.Windows.Forms.Padding(4);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(175, 64);
             this.button_logout.TabIndex = 31;
@@ -85,7 +86,7 @@ namespace SupermarketManagementSystem
             // 
             this.textBox_qty.ForeColor = System.Drawing.Color.Black;
             this.textBox_qty.Location = new System.Drawing.Point(189, 230);
-            this.textBox_qty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_qty.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_qty.Name = "textBox_qty";
             this.textBox_qty.Size = new System.Drawing.Size(265, 22);
             this.textBox_qty.TabIndex = 19;
@@ -128,7 +129,7 @@ namespace SupermarketManagementSystem
             this.panel1.Controls.Add(this.TextBox_name);
             this.panel1.Controls.Add(this.name);
             this.panel1.Location = new System.Drawing.Point(160, 27);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1239, 764);
             this.panel1.TabIndex = 26;
@@ -149,7 +150,7 @@ namespace SupermarketManagementSystem
             // 
             this.textBox_id.ForeColor = System.Drawing.Color.Black;
             this.textBox_id.Location = new System.Drawing.Point(844, 362);
-            this.textBox_id.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id.Name = "textBox_id";
             this.textBox_id.Size = new System.Drawing.Size(132, 22);
             this.textBox_id.TabIndex = 29;
@@ -197,7 +198,7 @@ namespace SupermarketManagementSystem
             this.dataGridView_sellList.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_sellList.ColumnHeadersHeight = 24;
             this.dataGridView_sellList.Location = new System.Drawing.Point(460, 407);
-            this.dataGridView_sellList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_sellList.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_sellList.Name = "dataGridView_sellList";
             this.dataGridView_sellList.RowHeadersWidth = 51;
             this.dataGridView_sellList.Size = new System.Drawing.Size(713, 235);
@@ -213,7 +214,7 @@ namespace SupermarketManagementSystem
             this.button_refresh.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_refresh.ForeColor = System.Drawing.Color.White;
             this.button_refresh.Location = new System.Drawing.Point(331, 352);
-            this.button_refresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_refresh.Margin = new System.Windows.Forms.Padding(4);
             this.button_refresh.Name = "button_refresh";
             this.button_refresh.Size = new System.Drawing.Size(125, 44);
             this.button_refresh.TabIndex = 24;
@@ -226,7 +227,7 @@ namespace SupermarketManagementSystem
             this.comboBox_category.Font = new System.Drawing.Font("Sitka Display", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_category.FormattingEnabled = true;
             this.comboBox_category.Location = new System.Drawing.Point(84, 352);
-            this.comboBox_category.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox_category.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox_category.Name = "comboBox_category";
             this.comboBox_category.Size = new System.Drawing.Size(215, 43);
             this.comboBox_category.TabIndex = 23;
@@ -262,7 +263,7 @@ namespace SupermarketManagementSystem
             this.DataGridView_product.BackgroundColor = System.Drawing.Color.White;
             this.DataGridView_product.ColumnHeadersHeight = 24;
             this.DataGridView_product.Location = new System.Drawing.Point(84, 407);
-            this.DataGridView_product.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DataGridView_product.Margin = new System.Windows.Forms.Padding(4);
             this.DataGridView_product.Name = "DataGridView_product";
             this.DataGridView_product.RowHeadersWidth = 51;
             this.DataGridView_product.Size = new System.Drawing.Size(348, 288);
@@ -281,7 +282,7 @@ namespace SupermarketManagementSystem
             this.ProdQty,
             this.Total});
             this.dataGridView_order.Location = new System.Drawing.Point(464, 74);
-            this.dataGridView_order.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_order.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_order.Name = "dataGridView_order";
             this.dataGridView_order.RowHeadersWidth = 51;
             this.dataGridView_order.Size = new System.Drawing.Size(713, 206);
@@ -343,7 +344,7 @@ namespace SupermarketManagementSystem
             this.button_Print.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Print.ForeColor = System.Drawing.Color.White;
             this.button_Print.Location = new System.Drawing.Point(1052, 650);
-            this.button_Print.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_Print.Margin = new System.Windows.Forms.Padding(4);
             this.button_Print.Name = "button_Print";
             this.button_Print.Size = new System.Drawing.Size(125, 53);
             this.button_Print.TabIndex = 12;
@@ -359,7 +360,7 @@ namespace SupermarketManagementSystem
             this.button_add.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.White;
             this.button_add.Location = new System.Drawing.Point(1048, 343);
-            this.button_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_add.Margin = new System.Windows.Forms.Padding(4);
             this.button_add.Name = "button_add";
             this.button_add.Size = new System.Drawing.Size(125, 53);
             this.button_add.TabIndex = 11;
@@ -375,7 +376,7 @@ namespace SupermarketManagementSystem
             this.button_addOrder.Font = new System.Drawing.Font("Sitka Display", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addOrder.ForeColor = System.Drawing.Color.White;
             this.button_addOrder.Location = new System.Drawing.Point(308, 274);
-            this.button_addOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_addOrder.Margin = new System.Windows.Forms.Padding(4);
             this.button_addOrder.Name = "button_addOrder";
             this.button_addOrder.Size = new System.Drawing.Size(148, 53);
             this.button_addOrder.TabIndex = 10;
@@ -387,7 +388,7 @@ namespace SupermarketManagementSystem
             // 
             this.textBox_price.ForeColor = System.Drawing.Color.Black;
             this.textBox_price.Location = new System.Drawing.Point(189, 160);
-            this.textBox_price.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_price.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_price.Name = "textBox_price";
             this.textBox_price.Size = new System.Drawing.Size(265, 22);
             this.textBox_price.TabIndex = 5;
@@ -409,7 +410,7 @@ namespace SupermarketManagementSystem
             this.TextBox_name.AcceptsReturn = true;
             this.TextBox_name.ForeColor = System.Drawing.Color.Black;
             this.TextBox_name.Location = new System.Drawing.Point(189, 102);
-            this.TextBox_name.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TextBox_name.Margin = new System.Windows.Forms.Padding(4);
             this.TextBox_name.Name = "TextBox_name";
             this.TextBox_name.Size = new System.Drawing.Size(265, 22);
             this.TextBox_name.TabIndex = 3;
@@ -440,16 +441,32 @@ namespace SupermarketManagementSystem
             this.label2.TabIndex = 27;
             this.label2.Text = "X";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.Font = new System.Drawing.Font("Sitka Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Location = new System.Drawing.Point(1321, -7);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 40);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "X";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
+            this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
+            // 
             // SellingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1349, 752);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SellingForm";
             this.Text = "SellingFrom1";
             this.Load += new System.EventHandler(this.SellingFrom1_Load);
@@ -495,5 +512,6 @@ namespace SupermarketManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_id;
+        private System.Windows.Forms.Label label5;
     }
 }

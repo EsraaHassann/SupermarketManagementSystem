@@ -105,7 +105,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Sitka Display", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label2.Location = new System.Drawing.Point(1071, 2);
+            this.label2.Location = new System.Drawing.Point(1071, -4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 40);
             this.label2.TabIndex = 21;
