@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SupermarketManagementSystem
 {
-   /* public class SellerRepository : ISellerRepository
+    public class SellerRepository : ISellerRepository
     {
         private readonly IDatabaseConnection _dbCon;
 
@@ -53,6 +53,6 @@ namespace SupermarketManagementSystem
             command.ExecuteNonQuery();
             _dbCon.CloseCon();
         }
-    }*/
+    }
 
 }
