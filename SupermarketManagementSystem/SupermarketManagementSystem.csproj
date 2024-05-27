@@ -166,8 +166,10 @@
     <Compile Include="CategoryForm.Designer.cs">
       <DependentUpon>CategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CategoryRepository.cs" />
     <Compile Include="DBConnect.cs" />
     <Compile Include="DGVPrinter.cs" />
+    <Compile Include="ICategoryRepository.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

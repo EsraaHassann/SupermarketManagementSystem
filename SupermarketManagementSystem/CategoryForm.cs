@@ -8,16 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Web.UI.WebControls;
 
 namespace SupermarketManagementSystem
 {
     public partial class CategoryForm : Form
     {
-        private readonly DBConnect dBCon = new DBConnect();
+        private readonly ICategoryRepository _categoryRepository;
 
         public CategoryForm()
         {
             InitializeComponent();
+            _categoryRepository = new CategoryRepository();
             getTable(); // Load data into the DataGridView when the form loads
         }
 
@@ -37,12 +39,8 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                string insertQuery = "INSERT INTO Category VALUES(" + textBox1_id.Text + ", '" + textBox_Name.Text + "', '" + textBox_des.Text + "')";
-                SqlCommand command = new SqlCommand(insertQuery, dBCon.GetCon());
-                dBCon.OpenCon();
-                command.ExecuteNonQuery();
+                _categoryRepository.AddCategory(textBox1_id.Text, textBox_Name.Text, textBox_des.Text);
                 MessageBox.Show("Category Added Successfully", "Add Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dBCon.CloseCon();
                 getTable();
                 clear();
             }
@@ -56,18 +54,14 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                if (textBox1_id.Text == "" || textBox_Name.Text == "" || textBox_des.Text == "")
+                if (string.IsNullOrEmpty(textBox1_id.Text) || string.IsNullOrEmpty(textBox_Name.Text) || string.IsNullOrEmpty(textBox_des.Text))
                 {
                     MessageBox.Show("Missing Information", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    string updateQuery = "UPADTE Category SET CatName = '" + textBox_Name.Text + "', CatDes = '" + textBox_des.Text + "' WHERE CatId = '" + textBox1_id.Text + "'";
-                    SqlCommand command = new SqlCommand(updateQuery, dBCon.GetCon());
-                    dBCon.OpenCon();
-                    command.ExecuteNonQuery();
+                    _categoryRepository.UpdateCategory(textBox1_id.Text, textBox_Name.Text, textBox_des.Text);
                     MessageBox.Show("Category Updated Successfully", "Updated Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    dBCon.CloseCon();
                     getTable();
                     clear();
                 }
@@ -82,12 +76,8 @@ namespace SupermarketManagementSystem
         {
             try
             {
-                string deleteQuery = "DELETE FROM Category WHERE CatId = " + textBox1_id.Text + "";
-                SqlCommand command = new SqlCommand(deleteQuery, dBCon.GetCon());
-                dBCon.OpenCon();
-                command.ExecuteNonQuery();
+                _categoryRepository.DeleteCategory(textBox1_id.Text);
                 MessageBox.Show("Category Deleted Successfully", "Delete Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dBCon.CloseCon();
                 getTable();
                 clear();
             }
@@ -99,9 +89,19 @@ namespace SupermarketManagementSystem
 
         private void dataGridView1_category_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            textBox1_id.Text = dataGridView1_category.SelectedRows[0].Cells[0].Value.ToString();
-            textBox_Name.Text = dataGridView1_category.SelectedRows[0].Cells[1].Value.ToString();
-            textBox_des.Text = dataGridView1_category.SelectedRows[0].Cells[2].Value.ToString();
+            if (dataGridView1_category.SelectedCells.Count > 0) // Check if any cell is selected
+            {
+                int rowIndex = dataGridView1_category.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView1_category.Rows[rowIndex];
+
+                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
+                if (!selectedRow.IsNewRow)
+                {
+                    textBox1_id.Text = Convert.ToString(selectedRow.Cells["CatId"].Value);
+                    textBox_Name.Text = Convert.ToString(selectedRow.Cells["CatName"].Value);
+                    textBox_des.Text = Convert.ToString(selectedRow.Cells["CatDes"].Value);
+                }
+            }
         }
 
         private void button8_logout_MouseEnter_1(object sender, EventArgs e)
@@ -138,16 +138,7 @@ namespace SupermarketManagementSystem
 
         private void getTable()
         {
-            string selectQuery = "SELECT * FROM Category";
-            using (SqlCommand command = new SqlCommand (selectQuery, dBCon.GetCon()))
-            {
-                using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                {
-                    DataTable table = new DataTable();
-                    adapter.Fill(table);
-                    dataGridView1_category.DataSource = table;
-                }
-            }
+            dataGridView1_category.DataSource = _categoryRepository.GetCategories();
         }
 
         private void button7_selling_Click(object sender, EventArgs e)
