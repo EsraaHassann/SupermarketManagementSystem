@@ -172,6 +172,7 @@
     <Compile Include="FactoryProduct.cs" />
     <Compile Include="ICategoryRepository.cs" />
     <Compile Include="Iproduct.cs" />
+    <Compile Include="IProductStrategy.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>

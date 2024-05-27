@@ -19,7 +19,7 @@ namespace SupermarketManagementSystem
             //Application.Run(new SellingForm());
             //Application.Run(SplashForm.Instance);
             //Application.Run(new LoginForm());
-            Application.Run(new CategoryForm());
+            //Application.Run(new CategoryForm());
             //Application.Run(new SellerForm());
             //Application.Run(new ProductForm());
         }
