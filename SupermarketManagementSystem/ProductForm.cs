@@ -222,5 +222,24 @@ namespace SupermarketManagementSystem
             sellerForm.Show();
             this.Hide();
         }
+
+        private void dataGridView_products_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView_products.SelectedCells.Count > 0) // Check if any cell is selected
+            {
+                int rowIndex = dataGridView_products.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dataGridView_products.Rows[rowIndex];
+
+                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
+                if (!selectedRow.IsNewRow)
+                {
+                    textBox_id.Text = Convert.ToString(selectedRow.Cells["ProdId"].Value);
+                    textBox_name.Text = Convert.ToString(selectedRow.Cells["ProdName"].Value);
+                    textBox_price.Text = Convert.ToString(selectedRow.Cells["ProdPrice"].Value);
+                    textBox_qty.Text = Convert.ToString(selectedRow.Cells["ProdQty"].Value);
+
+                }
+            }
+        }
     }
 }

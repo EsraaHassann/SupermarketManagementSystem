@@ -221,8 +221,7 @@
             this.dataGridView_products.Size = new System.Drawing.Size(550, 490);
             this.dataGridView_products.StandardTab = true;
             this.dataGridView_products.TabIndex = 16;
-            //this.dataGridView_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_products_CellContentClick);
-            //this.dataGridView_products.Click += new System.EventHandler(this.dataGridView_products_Click);
+            this.dataGridView_products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_products_CellContentClick);
             // 
             // label_manageProducts
             // 
