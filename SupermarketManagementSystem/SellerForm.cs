@@ -13,6 +13,15 @@ namespace SupermarketManagementSystem
 {
     public partial class SellerForm : Form
     {
+        /*private readonly ISellerRepository _sellerRepository;
+        private readonly IUserInterface _userInterface;
+
+        public SellerForm(ISellerRepository sellerRepository, IUserInterface userInterface)
+        {
+            InitializeComponent();
+            _sellerRepository = sellerRepository;
+            _userInterface = userInterface;
+        }*/
         DBConnect dBCon = new DBConnect();
         public SellerForm()
         {
@@ -111,12 +120,7 @@ namespace SupermarketManagementSystem
         }
 
         private void dataGridView_seller_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {/*
-           TextBox_id.Text = dataGridView_seller.SelectedRows[0].Cells[0].Value.ToString();
-            TextBox_name.Text = dataGridView_seller.SelectedRows[0].Cells[1].Value.ToString();
-            TextBox_age.Text= dataGridView_seller.SelectedRows[0].Cells[2].Value.ToString();
-            TextBox_phone.Text= dataGridView_seller.SelectedRows[0].Cells[3].Value.ToString();
-            TextBox_pass.Text = dataGridView_seller.SelectedRows[0].Cells[4].Value.ToString();*/
+        {
         }
 
         private void SellerForm_Load(object sender, EventArgs e)
@@ -184,12 +188,12 @@ namespace SupermarketManagementSystem
         {
 
 
-            if (dataGridView_seller.SelectedCells.Count > 0) // Check if any cell is selected
+            if (dataGridView_seller.SelectedCells.Count > 0) 
             {
                 int rowIndex = dataGridView_seller.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = dataGridView_seller.Rows[rowIndex];
 
-                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
+                
                 if (!selectedRow.IsNewRow)
                 {
                     TextBox_id.Text = Convert.ToString(selectedRow.Cells["SellerId"].Value);
@@ -201,21 +205,7 @@ namespace SupermarketManagementSystem
                 }
             }
 
-            /*if (dataGridView_seller.SelectedCells.Count > 0) // Check if any cell is selected
-            {
-                int rowIndex = dataGridView_seller.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dataGridView_seller.Rows[rowIndex];
-
-                // Ensure the selected row is not a new row (if DataGridView allows adding new rows)
-                if (!selectedRow.IsNewRow)
-                {
-                    TextBox_id.Text = Convert.ToString(selectedRow.Cells["SellerId"].Value);
-                    TextBox_name.Text = Convert.ToString(selectedRow.Cells["SellerName"].Value);
-                    TextBox_age.Text = Convert.ToString(selectedRow.Cells["SellerAge"].Value);
-                    TextBox_phone.Text = Convert.ToString(selectedRow.Cells["SellerPhone"].Value);
-                    TextBox_pass.Text = Convert.ToString(selectedRow.Cells["SellerPass"].Value);
-                }
-            }*/
+           
         }
 
         private void button5_category_Click(object sender, EventArgs e)

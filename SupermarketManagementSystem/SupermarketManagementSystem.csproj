@@ -173,8 +173,11 @@
     <Compile Include="DGVPrinter.cs" />
     <Compile Include="FactoryProduct.cs" />
     <Compile Include="ICategoryRepository.cs" />
+    <Compile Include="IDatabaseConnection.cs" />
     <Compile Include="Iproduct.cs" />
     <Compile Include="IProductStrategy.cs" />
+    <Compile Include="ISellerRepository.cs" />
+    <Compile Include="IUserInterface.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,12 +196,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seller.cs" />
     <Compile Include="SellerForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SellerForm.Designer.cs">
       <DependentUpon>SellerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SellerRepository.cs" />
     <Compile Include="SellingForm.cs">
       <SubType>Form</SubType>
     </Compile>
