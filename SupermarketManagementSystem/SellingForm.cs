@@ -88,12 +88,12 @@ namespace SupermarketManagementSystem
             }
             else
             {
-                int Total = Convert.ToInt32(price.Text) * Convert.ToInt32(textBox_qty.Text);
+                int Total = Convert.ToInt32(textBox_price.Text) * Convert.ToInt32(textBox_qty.Text);
                 DataGridViewRow addRow = new DataGridViewRow();
                 addRow.CreateCells(dataGridView_order);
                 addRow.Cells[0].Value = ++n;
                 addRow.Cells[1].Value = TextBox_name.Text;
-                addRow.Cells[2].Value = price.Text;
+                addRow.Cells[2].Value = textBox_price.Text;
                 addRow.Cells[3].Value = textBox_qty.Text;
                 addRow.Cells[4].Value = Total;
                 dataGridView_order.Rows.Add(addRow);
@@ -185,7 +185,7 @@ namespace SupermarketManagementSystem
         private void DataGridView_product_Click(object sender, EventArgs e)
         {
             TextBox_name.Text = DataGridView_product.SelectedRows[0].Cells[0].Value.ToString();
-            price.Text = DataGridView_product.SelectedRows[0].Cells[1].Value.ToString();
+            textBox_price.Text = DataGridView_product.SelectedRows[0].Cells[1].Value.ToString();
         }
     }
 }
