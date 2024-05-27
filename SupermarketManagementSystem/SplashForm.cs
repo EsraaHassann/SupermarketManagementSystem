@@ -12,11 +12,23 @@ namespace SupermarketManagementSystem
 {
     public partial class SplashForm : Form
     {
-        public SplashForm()
+        private static SplashForm _instance;
+        private SplashForm()
         {
             InitializeComponent();
         }
 
+         public static SplashForm Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new SplashForm();
+            }
+            return _instance;
+        }
+    }
         private void guna2CircleProgressBar1_ValueChanged(object sender, EventArgs e)
         {
 
