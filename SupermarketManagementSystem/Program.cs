@@ -16,10 +16,10 @@ namespace SupermarketManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SellingForm());
+            //Application.Run(new SellingForm());
             //Application.Run(new SplashForm());
           // Application.Run(new LoginForm());
-            //Application.Run(new CategoryForm());
+            Application.Run(new CategoryForm());
             //Application.Run(new SellerForm());
             //Application.Run(new ProductForm());
         }
