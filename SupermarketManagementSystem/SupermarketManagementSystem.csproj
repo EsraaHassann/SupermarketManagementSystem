@@ -181,8 +181,10 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product.cs" />
     <Compile Include="ProductA.cs" />
     <Compile Include="ProductB.cs" />
+    <Compile Include="ProductContext.cs" />
     <Compile Include="ProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
